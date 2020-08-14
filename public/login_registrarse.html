@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto Final</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/styleLogin.css">
+	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
+  <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="cont">
+      <div class="form sign-in">
+        <form id="login-form">
+          <h2>¡Te damos la bienvenida de nuevo!</h2>
+          <label>
+            <span>Correo Electrónico</span>
+            <input id="LEmail" type="email" name="email" />
+          </label>
+          <label>
+            <span>Contraseña</span>
+            <input id="LPassword" type="password" name="password" />
+          </label>
+          <button class="submit" type="submit">Ingresar</button>
+          <p class="forgot-pass">¿Has olvidado tu contraseña?</p>
+
+          <div class="social-media">
+            <ul>
+              <li><img id="LFacebook" src="assets/img/facebook.png" /></li>
+              <li><img id="LGoogle" src="assets/img/google.png" /></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img-text m-up">
+            <h2>¿Eres nuevo en DBCR?</h2>
+            <p>Registrate y forma parte de nuestra comunidad.</p>
+          </div>
+          <div class="img-text m-in">
+            <h2>¿Te vas a perder tu siguiente gran oportunidad?</h2>
+            <p>
+              Si ya tienes una cuenta, inicia sesión y disfruta de una gran
+              experiencia.
+            </p>
+          </div>
+          <div class="img-btn">
+            <span class="m-up">Registrarse</span>
+            <span class="m-in">Iniciar sesión</span>
+          </div>
+        </div>
+        <div class="form sign-up">
+          <form id="registrar-form">
+            <h2>Registrate</h2>
+            <label>
+              <span>Email</span>
+              <input id="REmail" type="email" required/>
+            </label>
+            <label>
+              <span>Contraseña</span>
+              <input id="RPassword" type="password" required/>
+            </label>
+            <label>
+              <span>Confirmar Contraseña</span>
+              <input id="RCPassword" type="password" required/>
+            </label>
+
+            <p style="display: none;" id="noCoinciden" class="noCoinciden">Las contraseñas no coinciden</p>
+            <button type="submit" class="submit">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <script type="text/javascript" src="js/transaccionLR.js"></script>
+    <script src="js/conexion.js"></script>
+    <script src="js/registrar.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/loginGoogle.js"></script>
+    <script src="js/loginFacebook.js"></script>
+  </body>
+</html>

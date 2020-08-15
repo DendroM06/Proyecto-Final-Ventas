@@ -16,24 +16,45 @@ registroForm.addEventListener("submit", (e) => {
       .then((userCredential) => {
         verificar();
         registroForm.reset();
-        console.log("registrado");
-        console.log(userCredential);
+        mensajeAlertaCorrecto();
       })
       .catch(function (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorMessage);
+        if (errorCode == 'auth/invalid-email') {
+          emailIncorrecto('El correo electrónico no es valido');
+        }else{
+          emailIncorrecto('El correo electrónico ya esta en uso');
+        }
       });
   } else {
     noCoincide.style.display = "block";
   }
 });
 
-
 function verificar() {
-    var user = auth.currentUser;
-    user
-      .sendEmailVerification()
-      .then(function () {})
-      .catch(function (error) {});
-    }
+  var user = auth.currentUser;
+  user
+    .sendEmailVerification()
+    .then(function () {})
+    .catch(function (error) {});
+}
+
+function mensajeAlertaCorrecto() {
+  Swal.fire({
+    title: "Licorera DBCR",
+    text: "Verifica tu correo electrónico",
+    imageUrl: "/public/assets/img/verificar.jpg",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Custom image",
+  });
+}
+
+function emailIncorrecto(mensaje) {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: mensaje,
+  });
+}

@@ -102,6 +102,7 @@
           })        
     });
     uploadImagen = function(){
+      var user = firebase.auth().currentUser;
       var file = ($('#imagen'))[0].files[0];
 
       console.log(file);
@@ -118,6 +119,7 @@
 
         }, function(){
           console.log('Imagen subido');
+          var downloadURL = uploadTask.snapshot.downloadURL; 
         });
 
       }

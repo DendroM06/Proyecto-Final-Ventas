@@ -4,9 +4,36 @@ Lfacebook.addEventListener('click', e => {
     const providerFacebook = new firebase.auth.FacebookAuthProvider();
     auth.signInWithPopup(providerFacebook).then((result) => {
         console.log(result);
-        console.log("facebook Login");
+        var esNuevousuario = result.additionalUserInfo.isNewUser;
+        console.log(result);
+        if (esNuevousuario) {
+        window.location = "../registroFinal.html";            
+        } else {
+        window.location = "../principal.html";            
+        }   
       })
       .catch(err => {
         console.log(err);
       })
 });
+
+const Rfacebook = document.querySelector('#RFacebook');
+Rfacebook.addEventListener('click', e => {
+    e.preventDefault();
+    const providerFacebook = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(providerFacebook).then((result) => {
+        console.log(result);
+        var esNuevousuario = result.additionalUserInfo.isNewUser;
+        console.log(result);
+        if (esNuevousuario) {
+        window.location = "../registroFinal.html";            
+        } else {
+        window.location = "../principal.html";            
+        }   
+      })
+      .catch(err => {
+        console.log(err);
+      })
+});
+
+

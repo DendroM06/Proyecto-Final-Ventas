@@ -3,7 +3,7 @@
     //console.log(bodyProductos);  
     //console.log(coleccionProductos);  
     $('form').submit(function(e){
-      uploadImagen();
+      
       e.preventDefault();
       let id = $('#id').val();
       let codigo = $('#codigo').val();
@@ -101,27 +101,6 @@
           }
           })        
     });
-    uploadImagen = function(){
-      var user = firebase.auth().currentUser;
-      var file = ($('#imagen'))[0].files[0];
+ 
 
-      console.log(file);
-      if(!file){
-
-      }else{
-        var storageRef = storage.ref('/porductosImage' + file.name);
-
-        var uploadTask = storageRef.put(file);
-        uploadTask.on('state_changed', function(snapshot){
-
-        }, function(error){
-          console.log(error);
-
-        }, function(){
-          console.log('Imagen subido');
-          var downloadURL = uploadTask.snapshot.downloadURL; 
-        });
-
-      }
-     
-    }
+    

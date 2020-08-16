@@ -6,6 +6,7 @@ html, body {
     width: 100%;
     font-size: 16px;
 }
+
 .full-reset{
 	margin: 0;
 	padding: 0;
@@ -59,6 +60,7 @@ html, body {
 	background-color: #000;
 	height: 55px;
 	position: relative;
+	height: 80px
 }
 .logo{
     float: left;
@@ -75,10 +77,12 @@ html, body {
     width: 70%;
     text-align: right; 
 }
+
 .navigation-list > li{
     display: inline-block;
     height: 55px;
 }
+
 .navigation-list > li a{
 	height: 55px;
 	color: #fff;
@@ -90,6 +94,16 @@ html, body {
 }
 .navigation-list > li a:hover{
 	color:rgb(231,76,60)
+}
+
+.bienvenidoDBCR{		
+	height: 55px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	line-height: 55px;
+	padding: 0 10px;
 }
 /* ================================Social icons====================================*/
 .list-social-icons > li{

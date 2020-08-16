@@ -2,7 +2,7 @@
 var referencia = db.ref("usuarios");
 
 const registroCompletoForm = document.querySelector("#registroCompleto");
-coleccionUsuarios = db.ref().child("usuarios");
+//coleccionUsuarios = db.ref().child("usuarios");
 //console.log(coleccionUsuarios);
 
 registroCompletoForm.addEventListener("submit", (e) => {

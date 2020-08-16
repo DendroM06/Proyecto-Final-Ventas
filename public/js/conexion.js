@@ -4,7 +4,7 @@ var firebaseConfig = {
   authDomain: "proyectofinal-ventas.firebaseapp.com",
   databaseURL: "https://proyectofinal-ventas.firebaseio.com",
   projectId: "proyectofinal-ventas",
-  storageBucket: "proyectofinal-ventas.appspot.com",
+  storageBucket: "gs://proyectofinal-ventas.appspot.com",
   messagingSenderId: "539580745174",
   appId: "1:539580745174:web:3460ccd053267a0b1ad077",
   measurementId: "G-QCD8EL0TXZ",
@@ -15,5 +15,6 @@ firebase.analytics();
 const auth = firebase.auth();
 const fs = firebase.firestore();
 const db = firebase.database();
+const storage = firebase.storage();
 
 

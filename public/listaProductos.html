@@ -16,13 +16,14 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+        <link rel="icon" href="assets/img/logo_negro.png" type="image/png" sizes="16x16">
     
-    <title>Proyecto Final</title>
+    <title>Licorera DBCR</title>
 </head>
 
 <body>
     <div class="navbar">
-        <h1>Aqui YAA No va el nav</h1>
+        <img src="assets/img/logo_negro.png" height="80px"><h1>Administrar Productos</h1>
         <button id="cerrarSesion" type="submit">Cerrar Sesion</button>
     </div>
     <div class="jumbotron jumbotron-fluid" style="
@@ -82,7 +83,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Imagen</label>
-                                        <input id="imagen" type="text" class="form-control" required />
+                                        <input id="imagen" type="file" accept=".png, .jpg, .jpeg" class="hidden" required />
                                     </div>
                                 </div>
                                 <div class="modal-footer">

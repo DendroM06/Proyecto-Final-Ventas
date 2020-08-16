@@ -1,6 +1,5 @@
 var referenciaUsuarios = db.ref("usuarios/");
-
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(function (user) {  
   if (user) {
     var uid = user.uid;
     console.log(user);

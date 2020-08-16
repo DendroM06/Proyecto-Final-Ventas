@@ -32,6 +32,7 @@ function guardarDatos() {
           apellido: registroApellido,
           imagen: photoURL,
           telefono: registroTelefono,
+          uid: uid,
         })
         .then(() => {
           Swal.fire({

@@ -44,7 +44,7 @@ function mensajeAlertaCorrecto() {
   Swal.fire({
     title: "Licorera DBCR",
     text: "Verifica tu correo electrónico",
-    imageUrl: "/public/assets/img/verificar.jpg",
+    imageUrl: "../assets/img/verificar.jpg",
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: "Custom image",

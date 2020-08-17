@@ -31,7 +31,9 @@ function guardarDatos() {
   var registroNombre = document.querySelector("#RNombre").value;
   var registroApellido = document.querySelector("#RApellido").value;
   var registroTelefono = document.querySelector("#RTelefono").value;
+  console.log('popate: ' + RClave.value);
   var clave = hex_md5(RClave.value);
+  console.log('popo: ' + clave);
   var admin = false;
   claveAdmin.on("value", function (datas) {
     var con = datas.val();

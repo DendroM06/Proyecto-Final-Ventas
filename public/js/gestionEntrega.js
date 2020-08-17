@@ -76,6 +76,10 @@ function viewDataPedido(id_pedido, estado) {
     }
 }
 
+function inHTML(request, response) {
+    return document.getElementById(request).innerHTML = response;
+}
+
 function display(request, response) {
     return document.getElementById(request).style.display = response;
 }
@@ -115,22 +119,4 @@ function eliminarPedido2() {
     inHTML("loadTable", "");
     db.ref('pedidosRG/' + id_confirmarPedido).remove();
     $("#modalTask").modal("hide");
-}
-
-
-
-
-function value(request) {
-    return document.getElementById(request).value;
-}
-function asignation(request, response) {
-    return document.getElementById(request).value = response;
-}
-
-function inHTML(request, response) {
-    return document.getElementById(request).innerHTML = response;
-}
-function dateActuality() {
-    var fh = new Date();
-    return fh.getFullYear() + "-" + (fh.getMonth() + 1) + "-" + fh.getDate() + " " + fh.getHours() + ":" + fh.getMinutes();
 }

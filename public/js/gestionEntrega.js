@@ -99,9 +99,15 @@ function confirmarPedido() {
 function confirmarEntrega() {
     inHTML("loadTable", "");
     db.ref('pedidosRG/' + id_confirmarPedido).update({
-        estado: "Entregado"
+        estado: "Entregado",
+        fecha_entrega: dateActuality()
     });
     $("#modalTask").modal("hide");
+}
+
+function dateActuality() {
+    var fh = new Date();
+    return fh.getFullYear() + "-" + (fh.getMonth() + 1) + "-" + fh.getDate() + " " + fh.getHours() + ":" + fh.getMinutes();
 }
 
 var id_eliminarPedido;

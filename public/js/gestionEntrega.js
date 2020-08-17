@@ -26,7 +26,7 @@ function table(id_pedido, total, fecha_pedido, fecha_entrega, estado) {
             '<td><a href="#" data-toggle="modal" data-target="#modalTask" onclick="viewDataPedido(\'' + id_pedido + '\',\'' + estado + '\')">' +
             '<i class="fas fa-clipboard-list text-success icon-lg"></i></a></td>' +
             '</td><td>' + total + '</td><td>' + fecha_pedido + '</td><td>' + fecha_entrega + '</td><td>' + estado + '</td>' +
-            '<td><a href="#" onclick="removeTask(\'' + id_pedido + '\')">' +
+            '<td><a href="#" data-toggle="modal" data-target="#modalDelete" onclick="idEliminarPedido(\'' + id_pedido + '\')">' +
             '<i class="fas fa-trash-alt red icon-lg"></i></a></td></tr>';
     } else {
         return '<tr><td>' + id_pedido +
@@ -36,6 +36,7 @@ function table(id_pedido, total, fecha_pedido, fecha_entrega, estado) {
     }
 }
 
+var id_confirmarPedido;
 function viewDataPedido(id_pedido, estado) {
     inHTML("loadTable2", "");
     var reference = db.ref('detalle_pedidosRG/');
@@ -52,6 +53,7 @@ function viewDataPedido(id_pedido, estado) {
             }
         });
     });
+    id_confirmarPedido = id_pedido;
     switch (estado) {
         case "Pendiente":
             display('buttonEntregado', 'none');
@@ -82,6 +84,42 @@ function table2(producto, costo, cantidad, subtotal) {
     return '<tr><td>' + producto + '</td><td>' + costo + '</td><td>' + cantidad + '</td><td>' + subtotal + '</td></tr>';
 }
 
+function confirmarPedido() {
+    inHTML("loadTable", "");
+    db.ref('pedidosRG/' + id_confirmarPedido).update({
+        estado: "Confirmado"
+    });
+    $("#modalTask").modal("hide");
+}
+
+function confirmarEntrega() {
+    inHTML("loadTable", "");
+    db.ref('pedidosRG/' + id_confirmarPedido).update({
+        estado: "Entregado"
+    });
+    $("#modalTask").modal("hide");
+}
+
+var id_eliminarPedido;
+function idEliminarPedido(id_pedido) {
+    id_eliminarPedido = id_pedido;
+}
+
+function eliminarPedido1() {
+    inHTML("loadTable", "");
+    db.ref('pedidosRG/' + id_eliminarPedido).remove();
+    $("#modalDelete").modal("hide");
+}
+
+function eliminarPedido2() {
+    inHTML("loadTable", "");
+    db.ref('pedidosRG/' + id_confirmarPedido).remove();
+    $("#modalTask").modal("hide");
+}
+
+
+
+
 function value(request) {
     return document.getElementById(request).value;
 }
@@ -96,63 +134,3 @@ function dateActuality() {
     var fh = new Date();
     return fh.getFullYear() + "-" + (fh.getMonth() + 1) + "-" + fh.getDate() + " " + fh.getHours() + ":" + fh.getMinutes();
 }
-
-
-
-/*
-function onClickUpdate() {
-    var id_pedido = value("id_pedido");
-    var id_cliente = value("id_clienteEdit");
-    var pedido = value("pedidoEdit");
-    var total = value("totalEdit");
-    var estado = value("estadoEdit");
-    if (id_cliente.length == 0 || pedido.length == 0 || total.length == 0 || estado.length == 0) {
-        alert("Por favor, complete todos los campos");
-    } else {
-        inHTML("loadTable", "");
-        updateTask(id_pedido, id_cliente, pedido, total, estado);
-        inHTML("editData", "");
-        alert("Actualización Correcta");
-        update.disabled = true;
-    }
-}
-
-function updateTask(id_pedido, id_cliente, pedido, total, estado) {
-    db.ref('pedidosRG/' + id_pedido).update({
-        id_cliente: id_cliente,
-        fecha_pedido: dateActuality(),
-        fecha_entrega: '',
-        pedido: pedido,
-        total: total,
-        estado: estado
-    });
-}
-
-function removeTask(id_pedido) {
-    if (confirm("¿Esta seguro/a que desea eliminar este pedido?")) {
-        inHTML("loadTable", "");
-        db.ref('pedidosRG/' + id_pedido).remove();
-    }
-}
-
-function viewDataUpdate(id_pedido, id_cliente, pedido, total, estado) {
-    var response = '<div class="form-group">' +
-        '<input type="hidden" value=' + id_pedido + ' id="id_pedido">' +
-        '<label>Id Cliente:</label>' +
-        '<input type="text" id="id_clienteEdit" class="form-control" placeholder="Id Cliente" value=' + id_cliente + '>' +
-        '</div>' +
-        '<div class="form-group">' +
-        '<label>Pedido:</label>' +
-        '<textarea placeholder="Pedido" class="form-control" id="pedidoEdit">' + pedido + '</textarea>' +
-        '</div>' +
-        '<div class="form-group">' +
-        '<label>Total:</label>' +
-        '<input type="text" id="totalEdit" class="form-control" placeholder="Total" value=' + total + '>' +
-        '</div>' +
-        '<div class="form-group">' +
-        '<label>Estado:</label>' +
-        '<input type="text" id="estadoEdit" class="form-control" placeholder="Estado" value=' + estado + '>' +
-        '</div>';
-    inHTML('editData', response);
-    update.disabled = false;
-}*/

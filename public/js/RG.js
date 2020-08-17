@@ -63,7 +63,7 @@ function pedidos(id_cliente, total, estado) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //Detalle_Pedidos
-
+/*
 detalle_pedidos("-MExPXStb7j2KEcbU6Sk","-MExZUuJTxyIzLueo3R_", 2, 10);
 detalle_pedidos("-MExPXStb7j2KEcbU6Sk","-MExZUuLrGPTXaxecAGR", 2, 20);
 detalle_pedidos("-MExPXSxHJZdwv7Mn85i","-MExZUuMfTgAlfG06KnZ", 3, 20);
@@ -78,7 +78,7 @@ function detalle_pedidos(id_pedido, id_producto, cantidad, subtotal) {
         cantidad: cantidad,
         subtotal: subtotal
     });
-}
+}*/
 //
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -147,6 +147,7 @@ function insertPedido(id_cliente, pedido, total, estado) {
         estado: estado
     });
 }
+
 
 
 function onClickUpdate() {

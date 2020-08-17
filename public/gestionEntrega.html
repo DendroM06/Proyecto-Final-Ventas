@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style2.css">
     <title>Gestión de Entrega</title>
 </head>
@@ -68,16 +69,43 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="buttonEntregado" class="btn btn-success" data-dismiss="modal">Entregado</button>
-                    <button type="button" id="buttonEditar" class="btn btn-primary" data-dismiss="modal">Editar</button>
+                    <button type="button" id="buttonEntregado" class="btn btn-success"
+                        onclick="confirmarEntrega()">Entregado</button>
+                    <a href="gestionPedidos.html"><button type="button" id="buttonEditar"
+                            class="btn btn-primary">Editar</button></a>
                     <button type="button" id="buttonConfirmar" class="btn btn-success"
-                        data-dismiss="modal">Confimar</button>
+                        onclick="confirmarPedido()">Confimar</button>
                     <button type="button" id="buttonEliminar" class="btn btn-danger"
-                        onclick="onClickInsert()">Eliminar</button>
+                        onclick="eliminarPedido2()">Eliminar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div id="modalDelete" class="modal fade" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <div class="icon-box">
+                        <i class="material-icons"><img src="images/274c.png"
+                                style="width: 40px; margin-bottom: 25px;"></i>
+                    </div>
+                    <h4 class="modal-title w-100">¿Estas seguro/a?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p> ¿Realmente desea eliminar este pedido? Este proceso no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="eliminarPedido1()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

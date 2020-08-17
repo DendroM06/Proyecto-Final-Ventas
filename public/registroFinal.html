@@ -4,6 +4,9 @@
 	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
     <title>Proyecto Final</title>
 
+    <!--Contraseña-->
+    <script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
@@ -29,6 +32,9 @@
                 <div class="col-12 user-img">
                     <img src="assets/img/user.png" th:src="@{assets/img/user.png}"/>
                 </div>
+                <div class="page-header" style="color: white; padding-bottom: 10px;">
+                    <h1>Finaliza tu registro</h1>
+                  </div>
                 <form id="registroCompleto" class="col-12" th:action="@{/login}" method="get">
                     <div class="form-group" id="user-group">
                         <input id="RNombre" type="text" class="form-control" placeholder="Nombre" name="username" required/>
@@ -38,6 +44,15 @@
                     </div>
                     <div class="form-group" id="telefono-group">
                         <input id="RTelefono" type="tel" class="form-control" placeholder="Teléfono" name="telefono" pattern="[0]{1}[8-9]{1}[0-9]{8}" required/>
+                    </div>
+                    <div class="form-group">
+                          <select id="perfil" class="form-control">
+                            <option>Cliente</option>
+                            <option>Administrador</option>
+                          </select>
+                    </div>
+                    <div class="form-group" id="clave-group">
+                        <input id="RClave" type="text" class="form-control" placeholder="Clave Administrador" name="clave"/>
                     </div>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>Registrar</button>
                 </form>

@@ -15,6 +15,7 @@ firebase.analytics();
 const auth = firebase.auth();
 const fs = firebase.firestore();
 const db = firebase.database();
-const storage = firebase.storage();
-
+const st = firebase.storage();
+const stRef = firebase.storage().ref();
+const cUser = firebase.auth().currentUser;
 

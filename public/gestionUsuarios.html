@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gestión Productos</title>
+	<title>Gestión Usuarios</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
@@ -39,7 +39,7 @@
             </div>
              <ul class="list-unstyled full-reset navigation-list" style="padding-top: 10px;  padding-right: 25px;">
                  <li><a href="principal.html">Inicio</a></li>
-                 <li><a href="product.html">Productos</a></li>
+                 <li><a href="product.html">Usuarios</a></li>
                  <li><a href="news.html">Noticias</a></li>
                  <li><a href="services.html">Servicios</a></li>
                  <li><a href="contact.html">Contactenos</a></li>
@@ -48,14 +48,14 @@
          </nav>
         <div class="content-page cover-background font-content-news">
             <div class="jumbotron">
-              <h1 class="tittles-pages">Noticias DBCR</h1>
-              <p> Estas son nuestras últimas noticias </p>
+              <h1 class="tittles-pages">Gestiona los usuarios DBCR</h1>
+              <p> Nuestros usuarios: </p>
             </div>
             <section class="all-news-contents section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6" style="margin-left: 10%; width: 100%;">
-                            <button id="btnNuevo" class="btn btn-primary" data-toggle="tooltip" title="Nuevo Producto">
+                            <button hidden id="btnNuevo" class="btn btn-primary" data-toggle="tooltip" title="Nuevo Producto">
                                 Agregar
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -81,20 +81,28 @@
                                                 <input id="id" type="hidden" />
                                                 <!-- ID que vamos a recibir de firebase -->
                                                 <div class="form-group">
-                                                    <label>Código</label>
-                                                    <input id="codigo" type="text" class="form-control" required />
+                                                    <label>Admin</label>
+                                                    <input id="admin" type="text" class="form-control" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>UID</label>
+                                                    <input id="uid" type="text" class="form-control" readonly required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input id="nombre" type="text" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Precio</label>
-                                                    <input id="precio" type="number" class="form-control" required />
+                                                    <label>Apellido</label>
+                                                    <input id="apellido" type="text" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Stock</label>
-                                                    <input id="stock" type="number" class="form-control" required />
+                                                    <label>Email</label>
+                                                    <input id="email" type="email" class="form-control" readonly required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input id="telefono" type="tel" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Imagen</label>
@@ -115,22 +123,24 @@
                                 </div>
                             </div>
                             <!--Fin Modal-->
-                            <!--Inicio Tabla de Productos-->
-                            <table id="tablaProductos" class="table table-bordered">
+                            <!--Inicio Tabla de Usuarios-->
+                            <table id="tablaUsuarios" class="table table-bordered">
                                 <thead>
                                     <tr class="bg-dark text-light">
-                                        <th scope="col">CÓDIGO</th>
+                                        <th scope="col">ADMIN</th>
                                         <th scope="col">NOMBRE</th>
-                                        <th scope="col">PRECIO</th>
-                                        <th scope="col">STOCK</th>
+                                        <th scope="col">APELLIDO</th>
+                                        <th scope="col">EMAIL</th>
+                                        <th scope="col">TELEFONO</th>
                                         <th scope="col">IMAGEN</th>
-                                        <th scope="col">ACCIONES</th>                                    
+                                        <th scope="col">ACCIONES</th>    
+                                        <th hidden scope="col">UID</th>                                
                                     </tr>
                                 </thead>
-                                <tbody id="bodyProductos">
+                                <tbody id="bodyUsuarios">
                                 </tbody>
                             </table>
-                            <!--Fin Tabla de Productos-->
+                            <!--Fin Tabla de Usuarios-->
                         </div>
                     </div>
                 </div>
@@ -176,9 +186,9 @@
     <!-- llamado a cerrarSesion.js-->
     <script type="text/javascript" src="js/cerrarSesion.js"></script>
     <!-- Fin llamado a cerrarSesion.js-->
-    <!-- llamado a crudProductos.js-->
-    <script type="text/javascript" src="js/crudProductos.js"></script>
-    <!-- llamado a crudProductos.js-->
+    <!-- llamado a crudUsuarios.js-->
+    <script type="text/javascript" src="js/crudUsuarios.js"></script>
+    <!-- llamado a crudUsuarios.js-->
 
 </body>
 </html>

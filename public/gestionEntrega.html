@@ -4,7 +4,6 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -21,58 +20,25 @@
     </ul>
     <br>
     <div class="container">
+        <label>Cliente: </label>
+        <label id="nombreCliente"></label>
         <div class="row">
             <div class="col-lg-12">
-                <div class="text-left">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTask">
-                        [Agregar Pedido]
-                    </button>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <!--<div class="form-group">
-                    <div class="text-right">
-                        <input type="text" id="search" class="inpSearch" placeholder="Search Data">
-                    </div>
-                </div>-->
                 <div class="form-group">
                     <table class="table table-sm table-bordered text-center">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Id Pedido</th>
-                                <th>Id Cliente</th>
-                                <th>Fecha de Pedido</th>
-                                <th>Fecha de Entrega</th>
                                 <th>Pedido</th>
                                 <th>Total</th>
+                                <th>Fecha de Pedido</th>
+                                <th>Fecha de Entrega</th>
                                 <th>Estado</th>
-                                <th></th>
-                                <th></th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody id="loadTable"></tbody>
                     </table>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="text-left">
-                                <h5>Editar Pedido</h5>
-                            </div>
-                            <div class="text-right">
-                                <button type="button" class="btn btn-warning" onclick="onClickUpdate()"
-                                    id="update">Actualizar</button>
-                            </div>
-                        </div>
-                        <div id="editData"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -83,35 +49,28 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTask">Insertar Pedido</h5>
+                    <h5 class="modal-title" id="modalTask">Pedido</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!--<div class="form-group">
-                        <input type="text" id="id_pedido" class="form-control" placeholder="Id Pedido">
-                    </div>-->
-                    <div class="form-group">
-                        <label>Id Cliente:</label>
-                        <input type="text" id="id_cliente" class="form-control" placeholder="Id Cliente">
-                    </div>
-                    <div class="form-group">
-                        <label>Pedido:</label>
-                        <textarea placeholder="Pedido" class="form-control" id="pedido"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Total:</label>
-                        <input type="text" id="total" class="form-control" placeholder="Total">
-                    </div>
-                    <div class="form-group">
-                        <label>Estado:</label>
-                        <input type="text" id="estado" class="form-control" placeholder="Estado">
-                    </div>
+                    <table class="table table-sm table-bordered text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Costo</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="loadTable2"></tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" onclick="onClickInsert()">Guardar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Confimar</button>
+                    <button type="button" class="btn btn-danger" onclick="onClickInsert()">Eliminar</button>
                 </div>
             </div>
         </div>
@@ -133,7 +92,7 @@
     <!--<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>-->
 
     <script src="js/conexion.js"></script>
-    <script src="js/RG.js"></script>
+    <script src="js/gestionEntrega.js"></script>
 
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
         integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"

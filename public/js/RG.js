@@ -22,9 +22,29 @@ function clientes(nombres, apellidos, fecha_nacimiento,telefono,direccion, email
 //
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+//Productos
+/*
+productos("Pilsener",1.75, "https://imagen1",12);
+productos("Club",2.10, "https://imagen1",6);
+productos("Corona",2, "https://imagen1",6);
+productos("Budweiser",2.25, "https://imagen1",10);
+productos("Biela",1.15, "https://imagen1",4);
+
+function productos(producto, costo, imagen,stock) {
+    db.ref('productosRG/').push({
+        producto: producto,
+        costo: costo,
+        imagen: imagen,
+        stock: stock
+    });
+}*/
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 //Pedidos
 /*
 pedidos("-MEwmkudxZnaCJM2MLFu",30, "Pendiente");
+pedidos("-MEwmkudxZnaCJM2MLFu",25, "Pendiente");
 pedidos("-MEwmkuhlKAlGOg8LQ1l",40, "Pendiente");
 pedidos("-MEwmkui5L0Bt5CchaUU",50, "Pendiente");
 pedidos("-MEwmkui5L0Bt5CchaUV",60, "Pendiente");
@@ -43,12 +63,13 @@ function pedidos(id_cliente, total, estado) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //Detalle_Pedidos
-/*
-detalle_pedidos("-MEwt1PWjUTur4wAioGC","-MEcBE-Jn9bioEmg0t_U", 2, 10);
-detalle_pedidos("-MEwt1PWjUTur4wAioGC","-MEoa9c5YxqpS_AHU8W_", 3, 20);
-detalle_pedidos("-MEwt1PazDpeXio1JvyU","-MEusynR_ZisPjYpQGSb", 1, 10);
-detalle_pedidos("-MEwt1PazDpeXio1JvyU","-MEutGYQk-frI7JuYng8", 3, 30);
-detalle_pedidos("-MEwt1PbiYJhA5joRWO5","-MEuthBSoeRrCRf5-s6W", 5, 50);
+
+detalle_pedidos("-MExPXStb7j2KEcbU6Sk","-MExZUuJTxyIzLueo3R_", 2, 10);
+detalle_pedidos("-MExPXStb7j2KEcbU6Sk","-MExZUuLrGPTXaxecAGR", 2, 20);
+detalle_pedidos("-MExPXSxHJZdwv7Mn85i","-MExZUuMfTgAlfG06KnZ", 3, 20);
+detalle_pedidos("-MExPXSxHJZdwv7Mn85i","-MExZUuMfTgAlfG06Kn_", 1, 10);
+detalle_pedidos("-MExPXSxHJZdwv7Mn85i","-MExZUuN2RG4K4jnsbac", 3, 10);
+detalle_pedidos("-MExPXSypCnCN6eof0CF","-MExZUuJTxyIzLueo3R_", 5, 40);
 
 function detalle_pedidos(id_pedido, id_producto, cantidad, subtotal) {
     db.ref('detalle_pedidosRG/').push({
@@ -57,7 +78,7 @@ function detalle_pedidos(id_pedido, id_producto, cantidad, subtotal) {
         cantidad: cantidad,
         subtotal: subtotal
     });
-}*/
+}
 //
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

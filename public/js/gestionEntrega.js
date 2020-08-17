@@ -1,7 +1,3 @@
-function printHTML(request, response) {
-    return document.getElementById(request).innerHTML += response;
-}
-
 var id_cliente = '-MEwmkudxZnaCJM2MLFu';
 
 var reference = db.ref('pedidosRG/');
@@ -20,16 +16,27 @@ reference.on('value', function (datos) {
     });
 });
 
-function table(id_pedido, total, fecha_pedido, fecha_entrega, estado) {
-    return '<tr><td>' + id_pedido +
-        '<td><a href="#" data-toggle="modal" data-target="#modalTask" onclick="viewDataPedido(\'' + id_pedido + '\')">' +
-        '<i class="fas fa-clipboard-list text-success icon-lg"></i></a></td>' +
-        '</td><td>' + total + '</td><td>' + fecha_pedido + '</td><td>' + fecha_entrega + '</td><td>' + estado + '</td>' +
-        '<td><a href="#" onclick="removeTask(\'' + id_pedido + '\')">' +
-        '<i class="fas fa-trash-alt red icon-lg"></i></a></td></tr>';
+function printHTML(request, response) {
+    return document.getElementById(request).innerHTML += response;
 }
 
-function viewDataPedido(id_pedido) {
+function table(id_pedido, total, fecha_pedido, fecha_entrega, estado) {
+    if (estado == "Pendiente") {
+        return '<tr><td>' + id_pedido +
+            '<td><a href="#" data-toggle="modal" data-target="#modalTask" onclick="viewDataPedido(\'' + id_pedido + '\',\'' + estado + '\')">' +
+            '<i class="fas fa-clipboard-list text-success icon-lg"></i></a></td>' +
+            '</td><td>' + total + '</td><td>' + fecha_pedido + '</td><td>' + fecha_entrega + '</td><td>' + estado + '</td>' +
+            '<td><a href="#" onclick="removeTask(\'' + id_pedido + '\')">' +
+            '<i class="fas fa-trash-alt red icon-lg"></i></a></td></tr>';
+    } else {
+        return '<tr><td>' + id_pedido +
+            '<td><a href="#" data-toggle="modal" data-target="#modalTask" onclick="viewDataPedido(\'' + id_pedido + '\',\'' + estado + '\')">' +
+            '<i class="fas fa-clipboard-list text-success icon-lg"></i></a></td>' +
+            '</td><td>' + total + '</td><td>' + fecha_pedido + '</td><td>' + fecha_entrega + '</td><td>' + estado + '</td><td></td></tr>';
+    }
+}
+
+function viewDataPedido(id_pedido, estado) {
     inHTML("loadTable2", "");
     var reference = db.ref('detalle_pedidosRG/');
     reference.on('value', function (datos) {
@@ -45,6 +52,30 @@ function viewDataPedido(id_pedido) {
             }
         });
     });
+    switch (estado) {
+        case "Pendiente":
+            display('buttonEntregado', 'none');
+            display('buttonEditar', '');
+            display('buttonConfirmar', '');
+            display('buttonEliminar', '');
+            break;
+        case "Confirmado":
+            display('buttonEntregado', '');
+            display('buttonEditar', 'none');
+            display('buttonConfirmar', 'none');
+            display('buttonEliminar', 'none');
+            break;
+        case "Entregado":
+            display('buttonEntregado', 'none');
+            display('buttonEditar', 'none');
+            display('buttonConfirmar', 'none');
+            display('buttonEliminar', 'none');
+            break;
+    }
+}
+
+function display(request, response) {
+    return document.getElementById(request).style.display = response;
 }
 
 function table2(producto, costo, cantidad, subtotal) {

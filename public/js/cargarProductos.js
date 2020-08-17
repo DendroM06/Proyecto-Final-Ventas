@@ -11,7 +11,7 @@ var referenciaProductos = db.ref("productos");
               //nom ='<h3 class=" text-center">'+ datos[key].nombre + '</h3>';
               
           }
-          document.getElementById("imagen1").innerHTML = result;
+          document.getElementById("all-categories").innerHTML = result;
       
 
       })

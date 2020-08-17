@@ -1,9 +1,70 @@
 //var db = firebase.database();
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//Clientes
+/*
+clientes("nombresCliente1","apellidosCliente1", "fecha_nacimientoCliente1","celularCliente1","direccionCliente1","emailCliente1");
+clientes("nombresCliente2","apellidosCliente2", "fecha_nacimientoCliente2","celularCliente2","direccionCliente2","emailCliente2");
+clientes("nombresCliente3","apellidosCliente3", "fecha_nacimientoCliente3","celularCliente3","direccionCliente3","emailCliente3");
+clientes("nombresCliente4","apellidosCliente4", "fecha_nacimientoCliente4","celularCliente4","direccionCliente4","emailCliente4");
+clientes("nombresCliente5","apellidosCliente5", "fecha_nacimientoCliente5","celularCliente5","direccionCliente5","emailCliente5");
+
+function clientes(nombres, apellidos, fecha_nacimiento,telefono,direccion, email) {
+    db.ref('clientesRG/').push({
+        nombres: nombres,
+        apellidos: apellidos,
+        fecha_nacimiento: fecha_nacimiento,
+        telefono: telefono,
+        direccion: direccion,
+        email: email
+    });
+}*/
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//Pedidos
+/*
+pedidos("-MEwmkudxZnaCJM2MLFu",30, "Pendiente");
+pedidos("-MEwmkuhlKAlGOg8LQ1l",40, "Pendiente");
+pedidos("-MEwmkui5L0Bt5CchaUU",50, "Pendiente");
+pedidos("-MEwmkui5L0Bt5CchaUV",60, "Pendiente");
+pedidos("-MEwmkui5L0Bt5CchaUW",70, "Pendiente");
+
+function pedidos(id_cliente, total, estado) {
+    db.ref('pedidosRG/').push({
+        id_cliente: id_cliente,
+        fecha_pedido: dateActuality(),
+        fecha_entrega: '',
+        total: total,
+        estado: estado
+    });
+}*/
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//Detalle_Pedidos
+/*
+detalle_pedidos("-MEwt1PWjUTur4wAioGC","-MEcBE-Jn9bioEmg0t_U", 2, 10);
+detalle_pedidos("-MEwt1PWjUTur4wAioGC","-MEoa9c5YxqpS_AHU8W_", 3, 20);
+detalle_pedidos("-MEwt1PazDpeXio1JvyU","-MEusynR_ZisPjYpQGSb", 1, 10);
+detalle_pedidos("-MEwt1PazDpeXio1JvyU","-MEutGYQk-frI7JuYng8", 3, 30);
+detalle_pedidos("-MEwt1PbiYJhA5joRWO5","-MEuthBSoeRrCRf5-s6W", 5, 50);
+
+function detalle_pedidos(id_pedido, id_producto, cantidad, subtotal) {
+    db.ref('detalle_pedidosRG/').push({
+        id_pedido: id_pedido,
+        id_producto: id_producto,
+        cantidad: cantidad,
+        subtotal: subtotal
+    });
+}*/
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 var update = document.getElementById('update');
 update.disabled = true;
 
-var reference = db.ref('pedidos1/');
+var reference = db.ref('pedidosRG/');
 reference.on('value', function (datos) {
     var data = datos.val();
     $.each(data, function (id_pedido, value) {
@@ -46,7 +107,7 @@ function onClickInsert() {
         alert("Por favor, complete todos los campos");
     } else {
         inHTML("loadTable", "");
-        insertTask(id_cliente, pedido, total, estado);
+        insertPedido(id_cliente, pedido, total, estado);
         asignation("id_cliente", "");
         asignation("pedido", "");
         asignation("total", "");
@@ -55,8 +116,8 @@ function onClickInsert() {
     }
 }
 
-function insertTask(id_cliente, pedido, total, estado) {
-    db.ref('pedidos1/').push({
+function insertPedido(id_cliente, pedido, total, estado) {
+    db.ref('pedidosRG/').push({
         id_cliente: id_cliente,
         fecha_pedido: dateActuality(),
         fecha_entrega: '',
@@ -85,7 +146,7 @@ function onClickUpdate() {
 }
 
 function updateTask(id_pedido, id_cliente, pedido, total, estado) {
-    db.ref('pedidos1/' + id_pedido).update({
+    db.ref('pedidosRG/' + id_pedido).update({
         id_cliente: id_cliente,
         fecha_pedido: dateActuality(),
         fecha_entrega: '',
@@ -98,7 +159,7 @@ function updateTask(id_pedido, id_cliente, pedido, total, estado) {
 function removeTask(id_pedido) {
     if (confirm("¿Esta seguro/a que desea eliminar este pedido?")) {
         inHTML("loadTable", "");
-        db.ref('pedidos1/' + id_pedido).remove();
+        db.ref('pedidosRG/' + id_pedido).remove();
     }
 }
 

@@ -25,12 +25,40 @@
             Licorera DBCR</a>
            </div>
             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;">
-                <li> <div class="bienvenidoDBCR" id="cont3"></div></li>
+                <li> <div class="bienvenidoDBCR" id="cont3"></div></li>     
+                <li>
+                    <div >
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="assets/img/carro.png" class="nav-link dropdown-toggle img-fluid" width="50px" height="50px"
+                                    href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>          
                 <li><a href="principal.html">Inicio</a></li>
                 <li><a href="product.html">Productos</a>
                 <li><a href="gestionProductos.html">Gestion Productos</a></li>
                 <li><a href="services.html">Pedido</a></li>
-                <li><a href="contact.html">Contactenos</a></li>
+                <li><a href="contact.html">Contactenos</a></li>               
                 <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>
             </ul>
             <i class="fa fa-bars visible-xs btn-mobile"></i>

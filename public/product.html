@@ -25,6 +25,34 @@
 			 Licorera DBCR</a>
 			</div>
 			 <ul class="list-unstyled full-reset navigation-list" style="padding-top: 10px;  padding-right: 25px;">
+				<li>
+					<div>
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item dropdown">
+								<img src="assets/img/carro.png" class="nav-link dropdown-toggle img-fluid" width="50px" height="50px"
+									href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+								<div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+									<table id="lista-carrito" class="table">
+										<thead>
+											<tr>
+												<th>Imagen</th>
+												<th>Nombre</th>
+												<th>Precio</th>
+												<th>Cantidad</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+				
+									<a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+									<a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+										Compra</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
 				 <li><a href="principal.html">Inicio</a></li>
 				 <li><a href="product.html">Productos</a></li>
 				 <!--<li><a href="news.html">Noticias</a></li>--->
@@ -81,7 +109,7 @@
 		    				<p class="tittles-pages">Licores</p>
 		    			</div>
 		    			<div class="col-xs-12">
-		    				<div class="container">
+		    				<div class="container" id="lista-productos">
 			    				<ul class="nav nav-tabs" role="tablist" id="TabProducts">
 								  <li class="active"><a href="#all-categories" role="tab" data-toggle="tab"><i class="fa fa-th"></i>&nbsp; Todo</a></li>
 								  <li><a href="#smartphones" role="tab" data-toggle="tab"><i class="fa fa-mobile"></i>&nbsp; Whiskys</a></li>
@@ -99,7 +127,7 @@
 								  <!-- ===================================== Todas las categorias ============================================= -->
 								  <div class="tab-pane active" id="all-categories">
 								  	<p class="tittles-pages">Todos los productos</p>
-									<div class="row" id="ff">
+									<div class="row">
 										<div id="imagen1">
 										</div>
 
@@ -509,5 +537,8 @@
     <script src="js/cerrarSesion.js"></script>
 	<!-- Fin llamado a cerrarSesion.js-->
 	<script src="js/cargarProductos.js"></script>
+	<!--Carrito-->
+	<script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
 </body>
 </html>

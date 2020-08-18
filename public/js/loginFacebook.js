@@ -32,7 +32,11 @@ Rfacebook.addEventListener('click', e => {
         }   
       })
       .catch(err => {
-        console.log(err);
+        Swal.fire(
+          '¿Error al ingresar al Sistema?',
+          'Ya existe un usuario con el mismo correo electrónico',
+          'question'
+        )
       })
 });
 

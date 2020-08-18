@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/editarPerfil.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="page-container">
+    <nav class="full-reset nav-phonestore" style="height: 80px">
+      <div class="logo tittles-pages">
+        <a href="principal.html" style="text-decoration: none; color: white;">
+          <img src="images/logo_negro.png" height="80px">
+          Licorera DBCR</a>
+      </div>
+      <ul class="list-unstyled full-reset navigation-list" style="padding-top: 10px;  padding-right: 25px;">
+        <li><a href="principal.html">Inicio</a></li>
+        <li><a href="product.html">Usuarios</a></li>
+        <li><a href="news.html">Noticias</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="contact.html">Contactenos</a></li>
+      </ul>
+      <i class="fa fa-bars visible-xs btn-mobile"></i>
+    </nav>
+    <div class="container">
+      <div class="left box-primary">
+        <img id="imagen" class="image"
+          src="https://yt3.ggpht.com/-Y4ybONkbdYA/AAAAAAAAAAI/AAAAAAAAAAA/SCMi3HFru2w/s100-c-k-no-rj-c0xffffff/photo.jpg"
+          alt="" />
+        <h3 class="username text-center">Mariane Felix Fernandes</h3>
+        <a href="#" class="btn btn-primary btn-block"><b>Editar foto</b></a>
+      </div>
+      <div class="right tab-content">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Nombre: </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputNombre" required placeholder="Nombre">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Apellido: </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputApellido" required placeholder="Apellido">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Telefono: </label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="inputTelefono" required placeholder="Telefono" pattern="[0]{1}[8-9]{1}[0-9]{8}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">UID:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" readonly id="inputUID" placeholder="Nome">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" readonly placeholder="Email">
+            </div>
+          </div>          
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-danger">Guardar Datos</button>
+        </div>
+      </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="col-xs-12 text-center">
+          <h3>Siguenos en</h3>
+          <ul class="list-unstyled list-social-icons">
+            <li>
+              <a href="#!">
+                <i class="fa fa-facebook" style="background-color: #3B5998;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fa fa-google-plus" style="background-color: #DD4B39;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fa fa-twitter" style="background-color: #56A3D9;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="fa fa-youtube" style="background-color: #BF221F;"></i>
+              </a>
+            </li>
+          </ul>
+          <h4>PhoneStore &copy; 2016</h4>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- llamado a la conexion con Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+  <script src="js/conexion.js"></script>
+  <!-- Fin llamado a la conexion con Firebase-->
+  <!-- llamado a cerrarSesion.js-->
+  <script type="text/javascript" src="js/cerrarSesion.js"></script>
+  <!-- Fin llamado a cerrarSesion.js-->
+  <!-- llamado a crudUsuarios.js-->
+  <script type="text/javascript" src="js/editarPerfil.js"></script>
+  <!-- llamado a crudUsuarios.js-->
+
+</body>
+
+</html>

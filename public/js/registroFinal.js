@@ -1,5 +1,5 @@
 //referencia a la base de datos usuarios
-var referencia = db.ref("usuarios");
+var referencia = db.ref("usuarios/");
 var claveAdmin = db.ref("admin/");
 // Accedemos a los componentes
 const registroCompletoForm = document.querySelector("#registroCompleto");
@@ -31,10 +31,8 @@ function guardarDatos() {
   var registroNombre = document.querySelector("#RNombre").value;
   var registroApellido = document.querySelector("#RApellido").value;
   var registroTelefono = document.querySelector("#RTelefono").value;
-  console.log('popate: ' + RClave.value);
-  var clave = hex_md5(RClave.value);
-  console.log('popo: ' + clave);
-  var admin = false;
+  var clave = CryptoJS.MD5(RClave.value);
+  var admin;
   claveAdmin.on("value", function (datas) {
     var con = datas.val();
     $.each(con, function (node, value) {
@@ -53,6 +51,9 @@ function guardarDatos() {
             var uid = user.uid;
             var providerData = user.providerData;
             // ..
+            if (photoURL == null) {
+              photoURL = 'https://firebasestorage.googleapis.com/v0/b/proyectofinal-ventas.appspot.com/o/usuarios%2Fusuario.jpg?alt=media&token=04e10d53-980d-47d2-91d7-2b5dce2621cf';
+            }
             referencia
               .push({
                 email: email,
@@ -72,7 +73,8 @@ function guardarDatos() {
                   timer: 3000,
                   width: 400,
                 }).then(function () {
-                  window.location = "../principal.html";
+                  console.log(admin);
+                  //window.location = "../principal.html";
                 });
               })
               .catch((err) => {
@@ -80,7 +82,7 @@ function guardarDatos() {
               });
           }
         });
-      }else if(RClave.value == 0){
+      }else if(RClave.value == '0' || RClave.value == ''){
         admin = false;
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
@@ -93,6 +95,9 @@ function guardarDatos() {
             var uid = user.uid;
             var providerData = user.providerData;
             // ..
+            if (photoURL == null) {
+              photoURL = 'https://firebasestorage.googleapis.com/v0/b/proyectofinal-ventas.appspot.com/o/usuarios%2Fusuario.jpg?alt=media&token=04e10d53-980d-47d2-91d7-2b5dce2621cf';
+            }
             referencia
               .push({
                 email: email,
@@ -104,6 +109,7 @@ function guardarDatos() {
                 admin: admin,
               })
               .then(() => {
+                console.log(admin);
                 Swal.fire({
                   position: "center",
                   icon: "success",
@@ -112,7 +118,7 @@ function guardarDatos() {
                   timer: 3000,
                   width: 400,
                 }).then(function () {
-                  window.location = "../principal.html";
+                  //window.location = "../principal.html";
                 });
               })
               .catch((err) => {

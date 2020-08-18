@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
+	<meta charset="UTF-8">
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
     <title>Proyecto Final</title>
    
@@ -33,28 +35,14 @@
                     <img src="assets/img/user.png" th:src="@{assets/img/user.png}"/>
                 </div>
                 <div class="page-header" style="color: white; padding-bottom: 10px;">
-                    <h1>Finaliza tu registro</h1>
+                    <h1>Cambio de contraseña</h1>
                   </div>
-                <form id="registroCompleto" class="col-12" th:action="@{/login}" method="get">
-                    <div class="form-group" id="user-group">
-                        <input id="RNombre" type="text" class="form-control" placeholder="Nombre" name="username" required/>
-                    </div>
-                    <div class="form-group" id="user-group">
-                        <input id="RApellido" type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
-                    </div>
-                    <div class="form-group" id="telefono-group">
-                        <input id="RTelefono" type="tel" class="form-control" placeholder="Teléfono" name="telefono" pattern="[0]{1}[8-9]{1}[0-9]{8}" required/>
-                    </div>
-                    <div class="form-group">
-                          <select id="perfil" class="form-control">
-                            <option>Cliente</option>
-                            <option>Administrador</option>
-                          </select>
-                    </div>
+                <form id="cambioPassword" class="col-12" th:action="@{/login}" method="get">
+                    
                     <div class="form-group" id="clave-group">
-                        <input id="RClave" type="password" class="form-control" placeholder="Clave Administrador" name="clave"/>
+                        <input id="RcEmail" type="email" class="form-control" placeholder="Correo Electrónico" name="email"/>
                     </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>Registrar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>Aceptar</button>
                 </form>
             </div>
         </div>
@@ -64,6 +52,6 @@
      <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
      <script  type="text/javascript" src="js/conexion.js"></script>
      <!-- Fin llamado a la conexion con Firebase-->
-    <script src="js/registroFinal.js"></script>
+    <script src="js/olvidoClave.js"></script>
 </body>
 </html>

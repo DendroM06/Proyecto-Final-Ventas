@@ -50,7 +50,7 @@ function subirImagenAFirebase() {
 $("form").submit(function (e) {
   e.preventDefault();
   let id = $("#id").val();
-  let codigo = $("#codigo").val();
+  let categoria = $("#categoria").val();
   let nombre = $("#nombre").val();
   let precio = $("#precio").val();
   let stock = $("#stock").val();
@@ -62,7 +62,7 @@ $("form").submit(function (e) {
     idFirebase = coleccionProductos.push().key;
   }
   data = {
-    codigo: codigo,
+    categoria: categoria,
     nombre: nombre,
     precio: precio,
     stock: stock,
@@ -80,9 +80,9 @@ const iconoEditar =
   '<svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg>';
 const iconoBorrar =
   '<svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>';
-function mostrarProductos({ codigo, nombre, precio, stock, imagen }) {
+function mostrarProductos({ categoria, nombre, precio, stock, imagen }) {
   return `
-  <td>${codigo}</td>
+  <td>${categoria}</td>
   <td>${nombre}</td>
   <td>${precio}</td>
   <td>${stock}</td>
@@ -113,7 +113,7 @@ coleccionProductos.on("child_removed", (data) => {
 $("#btnNuevo").click(function () {
   inicializarImagenASubir();
   $("#id").val("");
-  $("#codigo").val("");
+  $("#categoria").val("");
   $("#nombre").val("");
   $("#precio").val("");
   $("#stock").val("");
@@ -126,14 +126,14 @@ $("#btnNuevo").click(function () {
 $("#tablaProductos").on("click", ".btnEditar", function () {
   inicializarImagenASubir();
   let id = $(this).closest("tr").attr("id");
-  let codigo = $(this).closest("tr").find("td:eq(0)").text();
+  let categoria = $(this).closest("tr").find("td:eq(0)").text();
   let nombre = $(this).closest("tr").find("td:eq(1)").text();
   let precio = $(this).closest("tr").find("td:eq(2)").text();
   let stock = $(this).closest("tr").find("td:eq(3)").text();
   //let imagen = $(this).closest('tr').find('td:eq(4)').text();
   let imagen = $(this).closest("tr").find("td:eq(4) img").attr("src");
   $("#id").val(id);
-  $("#codigo").val(codigo);
+  $("#categoria").val(categoria);
   $("#nombre").val(nombre);
   $("#precio").val(precio);
   $("#stock").val(stock);

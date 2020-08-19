@@ -1,6 +1,3 @@
-
-var id_cliente = '-MEzpCbszm-DlmSJ6JgW';
-
 var id_cliente;// = '-MEwmkudxZnaCJM2MLFu';
 ///
 var referenciaUsuarios = db.ref("usuarios/");

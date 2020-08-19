@@ -59,7 +59,7 @@ $("form").submit(function (e) {
   let imagen = $("#imagen").attr("src");
   //console.log('Esta url quier ' + imagen);
   //console.log('Esta url quieroooo ' + nuevaImagen);
-  console.log('Valor a: ' + admin);
+  //console.log('Valor a: ' + admin);
 
   if (admin == 'Si') {
     admin = true;
@@ -94,7 +94,7 @@ const iconoBorrar =
 function mostrarUsuarios({ admin, nombre, apellido, email, telefono, imagen, uid}) {
   var imgAdmin;
   var imgAlt;
-  if (admin == true) {
+  if (admin == 'true') {
     imgAdmin = "../assets/img/si.png";
     imgAlt = "true";
   }else{

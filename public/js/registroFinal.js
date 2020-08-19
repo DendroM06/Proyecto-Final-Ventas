@@ -74,7 +74,7 @@ function guardarDatos() {
                   width: 400,
                 }).then(function () {
                   console.log(admin);
-                  //window.location = "../principal.html";
+                  location.href = "../principal.html"; 
                 });
               })
               .catch((err) => {
@@ -118,7 +118,7 @@ function guardarDatos() {
                   timer: 3000,
                   width: 400,
                 }).then(function () {
-                  //window.location = "../principal.html";
+                  location.href = "../principal.html"; 
                 });
               })
               .catch((err) => {

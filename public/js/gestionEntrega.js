@@ -1,5 +1,12 @@
-var id_cliente = '-MEwmkudxZnaCJM2MLFu';
 
+var id_cliente;// = '-MEwmkudxZnaCJM2MLFu';
+///
+var referenciaUsuarios = db.ref("usuarios/");
+firebase.auth().onAuthStateChanged(function (user) {  
+  if (user) {
+    id_cliente = user.uid;    
+  }console.log(id_cliente);
+///
 var reference = db.ref('pedidosRG/');
 reference.on('value', function (datos) {
     var data = datos.val();
@@ -14,6 +21,7 @@ reference.on('value', function (datos) {
             });
         }
     });
+});
 });
 
 function printHTML(request, response) {

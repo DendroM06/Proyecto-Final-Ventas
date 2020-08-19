@@ -42,11 +42,16 @@ function viewDataPedido(id_pedido, estado) {
     var reference = db.ref('detalle_pedidosRG/');
     reference.on('value', function (datos) {
         var data = datos.val();
+        var _subtotal = 0;
         $.each(data, function (id_detallePedido, value) {
             if (value.id_pedido == id_pedido) {
                 var reference2 = db.ref('productosRG/' + value.id_producto);
                 reference2.on('value', function (datos2) {
                     var data2 = datos2.val();
+                    _subtotal += value.subtotal;
+                    document.getElementById('labelSubtotal').innerText = _subtotal.toFixed(2);
+                    document.getElementById('labelIva').innerText = (_subtotal * 0.12).toFixed(2);
+                    document.getElementById('labelTotal').innerText = (_subtotal + (_subtotal * 0.12)).toFixed(2);
                     var sendData = table2(data2.producto, data2.costo, value.cantidad, value.subtotal);
                     printHTML('loadTable2', sendData);
                 });

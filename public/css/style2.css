@@ -104,3 +104,21 @@ body {
     display: inline-block;
     margin: 100px auto;
 }
+
+#tableTotales{
+    width: 100%;
+}
+
+#tableTotales tr td{
+    width: 25%;
+}
+
+#labelSubtotal, #labelIva, #labelTotal{
+    width: 100%; 
+    text-align: center;
+}
+
+#subtotal, #iva, #total{
+    width: 100%; 
+    text-align: right;
+}

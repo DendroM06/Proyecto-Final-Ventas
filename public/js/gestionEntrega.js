@@ -7,7 +7,7 @@ var referenciaUsuarios = db.ref("usuarios/");
 firebase.auth().onAuthStateChanged(function (user) {  
   if (user) {
     id_cliente = user.uid;    
-  }console.log(id_cliente);
+  }
 ///
 var reference = db.ref('pedidosRG/');
 reference.on('value', function (datos) {

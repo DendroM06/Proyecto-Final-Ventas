@@ -111,7 +111,7 @@ function datosW(nombre,precio,imagen, id, categoria){
         </div>
         </div> ` ;  
 
-        return document.getElementById('cer').style.display='none';
+        //return document.getElementById('cer').style.display='none';
     
    
   }

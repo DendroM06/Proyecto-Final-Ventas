@@ -13,7 +13,7 @@ function innerHTML(id, result) {
 function datos(nombre, precio, imagen, id) {
   //var i = i+1;
   return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
-          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:50px">
+          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        

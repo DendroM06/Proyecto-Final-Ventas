@@ -1,6 +1,5 @@
 var referenciaProductos = db.ref("productos");
 
-<<<<<<< HEAD
 function vertodosProductos(){
   verProducto();
   verProductoC();
@@ -15,14 +14,6 @@ function vertodosProductos(){
   function datos(nombre,precio,imagen, id){
     //var i = i+1;
     return`<div class="col-xs-12 col-sm-6 col-md-3" >
-=======
-function innerHTML(id, result) {
-  return (document.getElementById(id).innerHTML += result);
-}
-function datos(nombre, precio, imagen, id) {
-  //var i = i+1;
-  return `<div class="col-xs-12 col-sm-6 col-md-3" >
->>>>>>> 7c827d327a252a75a167d0aadd7a53dbd0965870
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
@@ -37,7 +28,6 @@ function datos(nombre, precio, imagen, id) {
             </div>
           </div>
           </div> `;
-<<<<<<< HEAD
   }
   function verProducto(){
       var task  = db.ref("productos/");
@@ -57,27 +47,6 @@ function datos(nombre, precio, imagen, id) {
   function datosC(nombre,precio,imagen, id, categoria){
     if(categoria == 'Cerveza')
       return`<div class="col-xs-12 col-sm-6 col-md-3" >
-=======
-}
-function verProducto() {
-  var task = db.ref("productos/");
-  task.on("child_added", function (data) {
-    var taskValue = data.val();
-    task.id = data.key;
-    var productos = datos(
-      taskValue.nombre,
-      taskValue.precio,
-      taskValue.imagen,
-      task.id
-    );
-    innerHTML("imagen1", productos);
-    //console.log(productos);
-  });
-}
-function datosWh(nombre, precio, imagen, id, categoria) {
-  if (categoria == "Cerveza")
-    return `<div class="col-xs-12 col-sm-6 col-md-3" >
->>>>>>> 7c827d327a252a75a167d0aadd7a53dbd0965870
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
@@ -91,7 +60,6 @@ function datosWh(nombre, precio, imagen, id, categoria) {
                 <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
             </div>
           </div>
-<<<<<<< HEAD
           </div> ` ;   
       
   }
@@ -164,10 +132,3 @@ function verProductoW(){
 
   });   
 }
-=======
-          </div> `;
-}
-
-
-
->>>>>>> 7c827d327a252a75a167d0aadd7a53dbd0965870

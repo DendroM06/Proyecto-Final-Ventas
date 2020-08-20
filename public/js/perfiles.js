@@ -8,9 +8,9 @@ firebase.auth().onAuthStateChanged(function (user) {
         var data = datas.val();
         $.each(data, function (node, value) {
           if (value.admin == 'true') {
-            $("#103").css("display", "block");
+            $("#ssa").css("display", "block");
           }else{
-            $("#id").css("display", "none");
+            $("#ssa").css("display", "none");
           }
         });
       });      

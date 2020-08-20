@@ -15,7 +15,11 @@ var referenciaProductos = db.ref("productos");
                    $ 
                    <span class="">${precio}
                    </span>
-                </h1>                    
+                </h1>     
+                <input id="cantidad" type="number"  min="1" max="100" value="1" required />
+                <p>
+                <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>  
+                </p>               
             </div>
           </div>
           </div> `;
@@ -56,3 +60,5 @@ var referenciaProductos = db.ref("productos");
 
     });
 }
+
+

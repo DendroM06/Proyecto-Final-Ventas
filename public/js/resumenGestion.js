@@ -8,7 +8,7 @@ function todosDatos() {
     reference.on('value', function (datos) {
         var data = datos.val();
         $.each(data, function (id_pedido, value) {
-            var reference2 = db.ref('clientesRG/' + value.id_cliente);
+            var reference2 = db.ref('usuarios/' + value.id_cliente);
             reference2.on('value', function (datos2) {
                 var data2 = datos2.val();
                 var sendData = table(id_pedido, data2.nombres, data2.apellidos, value.total, value.fecha_pedido, value.fecha_entrega, value.estado);

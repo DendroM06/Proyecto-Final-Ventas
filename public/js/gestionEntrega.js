@@ -1,8 +1,6 @@
+var id_cliente; /*= '-MEzpCbszm-DlmSJ6JgW'*/
+/// 
 
-var id_cliente = '-MEzpCbszm-DlmSJ6JgW';
-
-var id_cliente;// = '-MEwmkudxZnaCJM2MLFu';
-///
 var referenciaUsuarios = db.ref("usuarios/");
 firebase.auth().onAuthStateChanged(function (user) {  
   if (user) {
@@ -24,7 +22,7 @@ reference.on('value', function (datos) {
         }
     });
 });
-});
+
 
 function printHTML(request, response) {
     return document.getElementById(request).innerHTML += response;
@@ -69,6 +67,7 @@ function viewDataPedido(id_pedido, estado) {
             }
         });
     });
+    
     id_confirmarPedido = id_pedido;
     switch (estado) {
         case "Pendiente":

@@ -1,5 +1,10 @@
 var referenciaProductos = db.ref("productos");
 
+function vertodosProductos(){
+  verProducto();
+  verProductoW();
+}
+
 function innerHTML(id, result) {
   return (document.getElementById(id).innerHTML += result);
 }
@@ -36,8 +41,8 @@ function verProducto() {
     //console.log(productos);
   });
 }
-function datosWh(nombre, precio, imagen, id, categoria) {
-  if (categoria == "Cerveza")
+function datosW(nombre, precio, imagen, id, categoria) {
+  if (categoria == 'Whisky'){
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
@@ -53,15 +58,20 @@ function datosWh(nombre, precio, imagen, id, categoria) {
             </div>
           </div>
           </div> `;
-}
 
+  }else if(categoria == 'Cerveza'){
+    
+
+  }
+    
+}
 
 function verProductoW(){
   var task  = db.ref("productos/");
   task.on("child_added",function(data){
       var taskValue = data.val();
       taskValue.id = data.key;
-      taskValue.codigo = 'Whisky';
+      
       var productos = datosW(taskValue.nombre,taskValue.precio,taskValue.imagen,taskValue.id,taskValue.categoria);
       innerHTML("twhisky",productos);
      //console.log(productos);

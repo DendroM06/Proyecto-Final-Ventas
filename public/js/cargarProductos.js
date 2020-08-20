@@ -9,8 +9,8 @@ function datos(nombre, precio, imagen, id) {
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
-                <h4 class=" text-center">${nombre}</h4>	                								        
-                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
+                <h3 class=" text-center">${nombre}</h3>	                								        
+                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
                    $ 
                    <span class="">${precio}
                    </span>

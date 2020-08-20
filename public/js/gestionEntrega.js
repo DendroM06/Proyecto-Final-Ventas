@@ -1,4 +1,4 @@
-/*var referenciaPUsuarios = db.ref("usuarios/");
+var referenciaPUsuarios = db.ref("usuarios/");
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
@@ -6,29 +6,29 @@ firebase.auth().onAuthStateChanged(function (user) {
     referenciaPUsuarios.on("value", function (datos) {
       var dato = datos.val();
       $.each(dato, function (node, value) {
-        if (value.uid == uid) {*/
-var id_cliente = '-MEzpCbszm-DlmSJ6JgW'//node;
-console.log(id_cliente);
-var reference = db.ref("pedidosRG/");
-reference.on("value", function (datos) {
-  var data = datos.val();
-  $.each(data, function (id_pedido, value) {
-    if (value.id_cliente == id_cliente) {
-      var sendData = table(id_pedido, value.total, value.fecha_pedido, value.fecha_entrega, value.estado);
-      printHTML("loadTable", sendData);
-      var reference2 = db.ref("usuarios/" + id_cliente);
-      reference2.on("value", function (datos2) {
-        var data2 = datos2.val();
-        document.getElementById("nombreCliente").innerText = data2.nombre + " " + data2.apellido;
+        if (value.uid == uid) {
+          var id_cliente = node;
+          console.log(id_cliente);
+          var reference = db.ref("pedidosRG/");
+          reference.on("value", function (datos) {
+            var data = datos.val();
+            $.each(data, function (id_pedido, value) {
+              if (value.id_cliente == id_cliente) {
+                var sendData = table(id_pedido, value.total, value.fecha_pedido, value.fecha_entrega, value.estado);
+                printHTML("loadTable", sendData);
+                var reference2 = db.ref("usuarios/" + id_cliente);
+                reference2.on("value", function (datos2) {
+                  var data2 = datos2.val();
+                  document.getElementById("nombreCliente").innerText = data2.nombre + " " + data2.apellido;
+                });
+              }
+            });
+          });
+        }
       });
-    }
-  });
+    });
+  }
 });
-/*}
-});
-});
-}
-});*/
 
 function printHTML(request, response) {
   return (document.getElementById(request).innerHTML += response);
@@ -80,8 +80,8 @@ function viewDataPedido(id_pedido, estado) {
         reference2.on("value", function (datos2) {
           var data2 = datos2.val();
           _subt = parseFloat(data2.precio) * parseFloat(value.cantidad);
-          var sendData = table2(data2.categoria,data2.nombre, data2.precio, value.cantidad, _subt);
-          printHTML("loadTable2", sendData);         
+          var sendData = table2(data2.categoria, data2.nombre, data2.precio, value.cantidad, _subt);
+          printHTML("loadTable2", sendData);
           _subtotal += _subt;
           document.getElementById("labelSubtotal").innerText = _subtotal.toFixed(2);
           document.getElementById("labelIva").innerText = (_subtotal * 0.12).toFixed(2);
@@ -121,7 +121,7 @@ function display(request, response) {
   return (document.getElementById(request).style.display = response);
 }
 
-function table2(categoria,producto, costo, cantidad, subtotal) {
+function table2(categoria, producto, costo, cantidad, subtotal) {
   return (
     "<tr><td>" +
     categoria +

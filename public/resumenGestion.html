@@ -29,8 +29,9 @@
                 <label style="margin-left: 20px;">Fecha Fin: 
                     <input type="datetime-local" id="fechaFin">
                 </label>
-                <input style="margin-left: 20px;" type="button" value=" FILTRAR " onclick="filtrarDatos()">
-                <input style="margin-left: 20px;" type="button" value=" TODOS " onclick="todosDatos()">
+                <input style="margin-left: 20px;" class="btn btn-success" type="button" value=" Filtrar " onclick="filtrarDatos()">
+                <input style="margin-left: 20px;" class="btn btn-success" type="button" value=" Todos " onclick="todosDatos()">
+                <input type="button" value="Regresar" class="btn btn-success" style="float: right;">
             </div>
             <br>
         </div>
@@ -70,6 +71,7 @@
                     <table class="table table-sm table-bordered text-center">
                         <thead class="thead-dark">
                             <tr>
+                                <th>Categoría</th>
                                 <th>Producto</th>
                                 <th>Costo</th>
                                 <th>Cantidad</th>

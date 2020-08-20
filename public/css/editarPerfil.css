@@ -4,6 +4,7 @@ body{
   .container{
     padding-top: 25px;    
     display: table;
+    padding-bottom: 250px;
   }
   .left{
     float: left;

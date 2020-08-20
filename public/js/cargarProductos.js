@@ -47,7 +47,7 @@ function datosW(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Whisky'){
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
                 <h1 class="card-title pricing-card-title text-center precio" text-align="center">
@@ -88,7 +88,7 @@ function datosC(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Cerveza'){
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive" >
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
                 <h1 class="card-title pricing-card-title text-center precio" text-align="center">

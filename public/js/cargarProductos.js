@@ -45,22 +45,16 @@ function verProducto() {
 }
 function datosW(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Whisky'){
-<<<<<<< HEAD
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
-=======
-    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
-          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
->>>>>>> 33c03afe7a7cd473949d3292bccf1be199477e24
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
-                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
+                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
                    $ 
                    <span class="">${precio}
                    </span>
-                </h4>   
+                </h1>   
                 <input id="cantidad" type="number"  min="1" max="100" value="1" required />
                 <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
             </div>
@@ -92,7 +86,6 @@ function verProductoW(){
 
 function datosC(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Cerveza'){
-<<<<<<< HEAD
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
@@ -103,18 +96,6 @@ function datosC(nombre, precio, imagen, id, categoria) {
                    <span class="">${precio}
                    </span>
                 </h1>   
-=======
-    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
-          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
-             <div class="caption">
-                <h3 class=" text-center">${nombre}</h3>	                								        
-                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
-                   $ 
-                   <span class="">${precio}
-                   </span>
-                </h4>   
->>>>>>> 33c03afe7a7cd473949d3292bccf1be199477e24
                 <input id="cantidad" type="number"  min="1" max="100" value="1" required />
                 <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
             </div>
@@ -147,7 +128,6 @@ function verProductoC(){
 
 function datosR(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Ron' || categoria == 'Vodka'){
-<<<<<<< HEAD
     return `<div class="col-xs-12 col-sm-6 col-md-3" >
           <div class="thumbnail thumbnail-content-phones">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
@@ -158,18 +138,6 @@ function datosR(nombre, precio, imagen, id, categoria) {
                    <span class="">${precio}
                    </span>
                 </h1>   
-=======
-    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
-          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
-             <div class="caption">
-                <h3 class=" text-center">${nombre}</h3>	                								        
-                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
-                   $ 
-                   <span class="">${precio}
-                   </span>
-                </h4>   
->>>>>>> 33c03afe7a7cd473949d3292bccf1be199477e24
                 <input id="cantidad" type="number"  min="1" max="100" value="1" required />
                 <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
             </div>
@@ -198,8 +166,4 @@ function verProductoR(){
       innerHTML("tron",productos);
      //console.log(productos);
   });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 33c03afe7a7cd473949d3292bccf1be199477e24

@@ -83,13 +83,13 @@ function procesarCompra() {
 
             // Change to your service ID, or keep using the default service
             var service_id = "default_service";
-            var template_id = "template_3SA9LsqQ";
+            var template_id = "template_gjdHl9cD";
 
             const cargandoGif = document.querySelector('#cargando');
             cargandoGif.style.display = 'block';
 
             const enviado = document.createElement('img');
-            enviado.src = 'img/mail.gif';
+            enviado.src = '../assets/img/mail.gif';
             enviado.style.display = 'block';
             enviado.width = '150';
 
@@ -101,7 +101,7 @@ function procesarCompra() {
                     setTimeout(() => {
                         compra.vaciarLocalStorage();
                         enviado.remove();
-                        window.location = "index.html";
+                        window.location = "products.html";
                     }, 2000);
 
 

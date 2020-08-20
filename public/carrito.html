@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gestión Usuarios</title>
+	<title>Gestión Productos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
@@ -38,18 +38,8 @@
              Licorera DBCR</a>
             </div>
              <ul class="list-unstyled full-reset navigation-list" style="padding-top: 10px;  padding-right: 25px;">
-                      			<!---INTENTO DESPLEGABLE -->   
-                                  <a href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
-                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                  Gestionar
-                                  <span class="caret"></span>
-                                  </a>
-                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu1">
-                                   <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
-                                   <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
-                                   <li><a href="gestionEntrega.html" class="dropdown-item">Ver Entregas</a></li>				
-                                  </ul>
-                                  <!---/INTENTO DESPLEGABLE -->
+                <li><a href="gestionUsuarios.html">Gestion Usuarios</a></li>
+                <li><a href="gestionProductos.html">Gestion Productos</a></li>
                 <li><a href="principal.html">Inicio</a></li>
                 <li><a href="product.html">Productos</a>
                 <li><a href="services.html">Pedido</a></li>
@@ -60,14 +50,14 @@
          </nav>
         <div class="content-page cover-background font-content-news">
             <div class="jumbotron">
-              <h1 class="tittles-pages">Gestiona los usuarios DBCR</h1>
-              <p> Nuestros usuarios: </p>
+              <h1 class="tittles-pages">Noticias DBCR</h1>
+              <p> Estas son nuestras últimas noticias </p>
             </div>
             <section class="all-news-contents section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6" style="margin-left: 10%; width: 100%;">
-                            <button hidden id="btnNuevo" class="btn btn-primary" data-toggle="tooltip" title="Nuevo Producto">
+                            <button id="btnNuevo" class="btn btn-primary" data-toggle="tooltip" title="Nuevo Producto">
                                 Agregar
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -93,31 +83,20 @@
                                                 <input id="id" type="hidden" />
                                                 <!-- ID que vamos a recibir de firebase -->
                                                 <div class="form-group">
-                                                    <label>Admin</label>
-                                                    <select id="admin" class="form-control" id="exampleFormControlSelect1">
-                                                        <option>Si</option>
-                                                        <option>No</option>
-                                                      </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>UID</label>
-                                                    <input id="uid" type="text" class="form-control" readonly required />
+                                                    <label>Categoría</label>
+                                                    <input id="categoria" type="text" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input id="nombre" type="text" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Apellido</label>
-                                                    <input id="apellido" type="text" class="form-control" required />
+                                                    <label>Precio</label>
+                                                    <input id="precio" type="number" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input id="email" type="email" class="form-control" readonly required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <input id="telefono" type="tel" class="form-control" required />
+                                                    <label>Stock</label>
+                                                    <input id="stock" type="number" class="form-control" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Imagen</label>
@@ -138,59 +117,57 @@
                                 </div>
                             </div>
                             <!--Fin Modal-->
-                            <!--Inicio Tabla de Usuarios-->
-                            <table id="tablaUsuarios" class="table table-bordered">
+                            <!--Inicio Tabla de Productos-->
+                            <table id="tablaProductos" class="table table-bordered">
                                 <thead>
                                     <tr class="bg-dark text-light">
-                                        <th scope="col">ADMIN</th>
+                                        <th scope="col">CATEGORIA</th>
                                         <th scope="col">NOMBRE</th>
-                                        <th scope="col">APELLIDO</th>
-                                        <th scope="col">EMAIL</th>
-                                        <th scope="col">TELEFONO</th>
+                                        <th scope="col">PRECIO</th>
+                                        <th scope="col">STOCK</th>
                                         <th scope="col">IMAGEN</th>
-                                        <th scope="col">ACCIONES</th>    
-                                        <th hidden scope="col">UID</th>                                
+                                        <th scope="col">ACCIONES</th>                                    
                                     </tr>
                                 </thead>
-                                <tbody id="bodyUsuarios">
+                                <tbody id="bodyProductos">
                                 </tbody>
                             </table>
-                            <!--Fin Tabla de Usuarios-->
+                            <!--Fin Tabla de Productos-->
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     	<footer class="footer">
-            <div class="container-fluid">
-                <div class="col-xs-12 text-center">
-                    <h3>Siguenos en</h3>
-                    <ul class="list-unstyled list-social-icons">
-                        <li >
-                            <a href="#!">
+    		<div class="container-fluid">
+    			<div class="col-xs-12 text-center">
+    				<h3>Siguenos en</h3>
+    				<ul class="list-unstyled list-social-icons">
+    					<li >
+    						<a href="https://www.facebook.com/desproyecto.sofventas.5">
                                <i class="fa fa-facebook" style="background-color: #3B5998;"></i> 
                             </a>
-                        </li>
-                        <li>
-                            <a href="#!">
+    					</li>
+    					<li>
+    						<a href="https://myaccount.google.com/u/1/?tab=kk&nlr=1">
                                 <i class="fa fa-google-plus" style="background-color: #DD4B39;"></i>
                             </a>
-                        </li>
-                        <li>
-                            <a href="#!">
+    					</li>
+    					<li>
+    						<a href="https://twitter.com/ProyectoFinal6">
                                 <i class="fa fa-twitter"  style="background-color: #56A3D9;"></i>
                             </a>
-                        </li>
-                        <li>
-                            <a href="#!">
+    					</li>
+    					<li>
+    						<a href="https://www.youtube.com/channel/UCbY41vV58M5-YKe1pphGUVw">
                                 <i class="fa fa-youtube" style="background-color: #BF221F;"></i>
                             </a>
-                        </li>
-                    </ul>
-                    <h4>PhoneStore &copy; 2016</h4>
-                </div>
-            </div>
-        </footer>
+    					</li>
+    				</ul>
+    				<h4>DBCR &copy; 2020</h4>
+    			</div>
+    		</div>
+    	</footer>
     </div>
     
     <!-- llamado a la conexion con Firebase-->
@@ -201,9 +178,9 @@
     <!-- llamado a cerrarSesion.js-->
     <script type="text/javascript" src="js/cerrarSesion.js"></script>
     <!-- Fin llamado a cerrarSesion.js-->
-    <!-- llamado a crudUsuarios.js-->
-    <script type="text/javascript" src="js/crudUsuarios.js"></script>
-    <!-- llamado a crudUsuarios.js-->
+    <!-- llamado a crudProductos.js-->
+    <script type="text/javascript" src="js/crudProductos.js"></script>
+    <!-- llamado a crudProductos.js-->
 
 </body>
 </html>

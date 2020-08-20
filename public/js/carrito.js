@@ -27,7 +27,13 @@ class Carrito {
             }
          });
          if (productosLS === infoProducto.id) {
-             console.log('Producto ya agregado');
+            Swal.fire({
+                icon: 'info',
+                title: 'Oops...',
+                text: 'El producto ya está agregado',
+                timer: 1000,
+                showConfirmButton: false
+              })
          }else{
              this.insertarCarrito(infoProducto);
          }
@@ -131,6 +137,15 @@ class Carrito {
 
     procesarPedido(e){
         e.preventDefault();
+        if (this.ObtenerProductosLS().length === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'El carrito está vacío, agrega algún producto',
+                timer: 2000,
+                showConfirmButton: false
+              })
+        }
         location.href = "compra.html";
     }
 }

@@ -63,7 +63,7 @@ function datosW(nombre, precio, imagen, id, categoria) {
     return`<a><a>`;
        
   }
-  else if(categoria == 'Cerveza'){
+  else if(categoria == 'Ron' || categoria == 'Vodka'){
     return`<a><a>`;
          
   }

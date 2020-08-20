@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gestión Productos</title>
+	<title>Carrito</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
@@ -57,81 +57,19 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6" style="margin-left: 10%; width: 100%;">
-                            <button id="btnNuevo" class="btn btn-primary" data-toggle="tooltip" title="Nuevo Producto">
-                                Agregar
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
-                                </svg>
-                            </button>
-                            <!-- Inicio Modal - Nuevo Producto-->
-                            <div id="modalAltaEdicion" class="modal fade" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-primary text-light">
-                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                Alta / Edición
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <form>
-                                            <div class="modal-body">
-                                                <input id="id" type="hidden" />
-                                                <!-- ID que vamos a recibir de firebase -->
-                                                <div class="form-group">
-                                                    <label>Categoría</label>
-                                                    <input id="categoria" type="text" class="form-control" required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input id="nombre" type="text" class="form-control" required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Precio</label>
-                                                    <input id="precio" type="number" class="form-control" required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Stock</label>
-                                                    <input id="stock" type="number" class="form-control" required />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Imagen</label>
-                                                    <input type="file" name="fichero" id="fichero">            
-                                                    <img src="" id="imagen" width="100px" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal" tabindex="2">
-                                                    Cancelar
-                                                </button>
-                                                <button type="submit" id="btnGuardar" class="btn btn-primary" translate="1">
-                                                    Guardar
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Fin Modal-->
                             <!--Inicio Tabla de Productos-->
-                            <table id="tablaProductos" class="table table-bordered">
-                                <thead>
-                                    <tr class="bg-dark text-light">
-                                        <th scope="col">CATEGORIA</th>
-                                        <th scope="col">NOMBRE</th>
-                                        <th scope="col">PRECIO</th>
-                                        <th scope="col">STOCK</th>
-                                        <th scope="col">IMAGEN</th>
-                                        <th scope="col">ACCIONES</th>                                    
+                            <table class="table table-sm table-bordered text-center">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Categoría</th>
+                                        <th>Producto</th>
+                                        <th>Costo</th>
+                                        <th>Cantidad</th>
+                                        <th>Subtotal</th>
                                     </tr>
                                 </thead>
-                                <tbody id="bodyProductos">
-                                </tbody>
-                            </table>
+                                <tbody id="tablaCarrito"></tbody>
+                            </table >
                             <!--Fin Tabla de Productos-->
                         </div>
                     </div>
@@ -179,7 +117,8 @@
     <script type="text/javascript" src="js/cerrarSesion.js"></script>
     <!-- Fin llamado a cerrarSesion.js-->
     <!-- llamado a crudProductos.js-->
-    <script type="text/javascript" src="js/crudProductos.js"></script>
+    <script type="text/javascript" src="js/pedido.js"></script>
+    <script type="text/javascript" src="js/carrito.js"></script>
     <!-- llamado a crudProductos.js-->
 
 </body>

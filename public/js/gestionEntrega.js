@@ -1,11 +1,14 @@
-var id_cliente; /*= '-MEzpCbszm-DlmSJ6JgW'*/
-/// 
 
+var id_cliente;// = '-MEwmkudxZnaCJM2MLFu';
+
+///
 var referenciaUsuarios = db.ref("usuarios/");
 firebase.auth().onAuthStateChanged(function (user) {  
   if (user) {
     id_cliente = user.uid;    
   }
+});
+console.log(id_cliente);
 ///
 var reference = db.ref('pedidosRG/');
 reference.on('value', function (datos) {
@@ -14,15 +17,14 @@ reference.on('value', function (datos) {
         if (value.id_cliente == id_cliente) {
             var sendData = table(id_pedido, value.total, value.fecha_pedido, value.fecha_entrega, value.estado);
             printHTML('loadTable', sendData);
-            var reference2 = db.ref('usuarios/' + id_cliente);
+            var reference2 = db.ref('clientesRG/' + id_cliente);
             reference2.on('value', function (datos2) {
                 var data2 = datos2.val();
-                document.getElementById('nombreCliente').innerText = data2.nombre + ' ' + data2.apellido;
+                document.getElementById('nombreCliente').innerText = data2.nombres + ' ' + data2.apellidos;
             });
         }
     });
 });
-
 
 function printHTML(request, response) {
     return document.getElementById(request).innerHTML += response;
@@ -53,21 +55,19 @@ function viewDataPedido(id_pedido, estado) {
         var _subtotal = 0;
         $.each(data, function (id_detallePedido, value) {
             if (value.id_pedido == id_pedido) {
-                var reference2 = db.ref('productos/' + value.id_producto);
+                var reference2 = db.ref('productosRG/' + value.id_producto);
                 reference2.on('value', function (datos2) {
                     var data2 = datos2.val();
-                    var subt = (parseFloat(data2.precio) * parseFloat(value.cantidad));                                        
-                    var sendData = table2(data2.categoria, data2.nombre, data2.precio, value.cantidad, subt );
-                    printHTML('loadTable2', sendData);    
-                    _subtotal += subt;                
+                    _subtotal += value.subtotal;
                     document.getElementById('labelSubtotal').innerText = _subtotal.toFixed(2);
                     document.getElementById('labelIva').innerText = (_subtotal * 0.12).toFixed(2);
                     document.getElementById('labelTotal').innerText = (_subtotal + (_subtotal * 0.12)).toFixed(2);
+                    var sendData = table2(data2.producto, data2.costo, value.cantidad, value.subtotal);
+                    printHTML('loadTable2', sendData);
                 });
             }
         });
     });
-    
     id_confirmarPedido = id_pedido;
     switch (estado) {
         case "Pendiente":
@@ -99,8 +99,8 @@ function display(request, response) {
     return document.getElementById(request).style.display = response;
 }
 
-function table2(categoria, producto, costo, cantidad, subtotal) {
-    return '<tr><td>' + categoria + '</td><td>' + producto + '</td><td>' + costo + '</td><td>' + cantidad + '</td><td>' + subtotal + '</td></tr>';
+function table2(producto, costo, cantidad, subtotal) {
+    return '<tr><td>' + producto + '</td><td>' + costo + '</td><td>' + cantidad + '</td><td>' + subtotal + '</td></tr>';
 }
 
 function confirmarPedido() {

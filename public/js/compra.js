@@ -34,7 +34,7 @@ function procesarCompra() {
             showConfirmButton: false,
             timer: 2000
         }).then(function () {
-            window.location = "index.html";
+            //window.location = "index.html";
         })
     }
     else if (cliente.value === '' || correo.value === '') {
@@ -47,10 +47,9 @@ function procesarCompra() {
         })
     }
     else {
-
         //aqui se coloca el user id generado en el emailJS
         (function () {
-            emailjs.init("user_CEozz2F39lJJOLF5mJiDA");
+            emailjs.init("user_D0HZHhj5M09LXF4NhGkWR");
         })();
 
         //El campo {{detalleCompra}} es el que se añadió en la plantilla de emailjs 
@@ -69,8 +68,7 @@ function procesarCompra() {
             cadena += `
                  Producto : ${producto.titulo}
                  Precio : ${producto.precio}
-                 Cantidad: ${producto.cantidad}
-                 
+                 Cantidad: ${producto.cantidad}                 
                 `;
         });
         document.getElementById('detalleCompra').innerHTML = cadena;

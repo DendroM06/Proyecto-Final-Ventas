@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     referenciaUsuarios.on("value", function (datas) {
         var data = datas.val();
         $.each(data, function (node, value) {
-          if (value.admin == 'true') {
+          if (value.admin) {
             $("#103").css("display", "block");
           }else{
             $("#id").css("display", "none");

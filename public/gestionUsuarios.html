@@ -27,34 +27,41 @@
 	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script src="js/modernizr.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>  <script src="js/bootstrap.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+    <script src="js/perfiles.js"></script>
+    <script src="js/nombreUsuario.js">
+    </script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
     <div class="page-container">
-        <nav class="full-reset nav-phonestore" style="height: 80px">
+        <nav class="full-reset nav-phonestore">
             <div class="logo tittles-pages">
                 <a href="principal.html" style="text-decoration: none; color: white;">
-             <img src="images/logo_negro.png" height="80px">
+             <img src="assets/img/logo_negro.png" height="80px">
              Licorera DBCR</a>
             </div>
-             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 10px;  padding-right: 25px;">
-                      			<!---INTENTO DESPLEGABLE -->   
-                                  <a href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
-                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                  Gestionar
-                                  <span class="caret"></span>
-                                  </a>
-                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu1">
-                                   <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
-                                   <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
-                                   <li><a href="gestionEntrega.html" class="dropdown-item">Ver Entregas</a></li>				
-                                  </ul>
-                                  <!---/INTENTO DESPLEGABLE -->
-                <li><a href="principal.html">Inicio</a></li>
-                <li><a href="product.html">Productos</a>
-                <li><a href="services.html">Pedido</a></li>
-                <li><a href="editarPerfil.html">Mi Perfil</a></li>             
-                <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>
+             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;" >
+                 <a id="100" hidden  href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                   Gestionar
+                                   <span id="101" hidden class="caret"></span>
+                                   </a>
+                                   <ul id="102"  class="dropdown-menu"  style=" margin-left: 750px; float: right; " role="menu" aria-labelledby="dropdownmenu1">
+                                    <div style="display: none;" id="103"">
+                                     <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
+                                     <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
+                                     <li><a href="resumenGestion.html" class="dropdown-item">Ver Entregas</a></li>				
+                                    
+                                    </div>
+                                 </ul>
+                
+                 <li><a href="principal.html">Inicio</a></li>
+                 <li><a href="product.html">Productos</a>
+                 <li><a href="gestionEntrega.html">Pedido</a></li>
+                 <li><a href="editarPerfil.html">Mi Perfil</a></li>             
+                 <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>   
              </ul>
              <i class="fa fa-bars visible-xs btn-mobile"></i>
          </nav>

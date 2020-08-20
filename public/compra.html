@@ -21,7 +21,11 @@
 	<script src="js/modernizr.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+    <script src="js/nombreUsuario.js"></script>
+    <script src="js/perfiles.js"></script>
+    </script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>Carrito Compras en JavaScript</title>
     
 </head>
@@ -30,13 +34,58 @@
     <header>
         <div class="container">
             <div class="row justify-content-between mb-5">
-                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <a class="navbar-brand" href="index.html">BODEGUITA FLORES EIRL</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
+                <nav class="full-reset nav-phonestore">
+                    <div class="logo tittles-pages">
+                        <a href="principal.html" style="text-decoration: none; color: white;">
+                     <img src="assets/img/logo_negro.png" height="80px">
+                     Licorera DBCR</a>
+                    </div>
+                     <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;" >
+                        <li><h3 style="color: white;" id="usrra"></h3></li>
+                         <a id="100" hidden  href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                           Gestionar
+                                           <span id="101" hidden class="caret"></span>
+                                           </a>
+                                           <ul id="102"  class="dropdown-menu"  style=" margin-left: 750px; float: right; " role="menu" aria-labelledby="dropdownmenu1">
+                                            <div style="display: none;" id="103"">
+                                             <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
+                                             <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
+                                             <li><a href="resumenGestion.html" class="dropdown-item">Ver Entregas</a></li>				
+                                            
+                                            </div>
+                                         </ul>
+                        
+                                         <li class="nav-item dropdown">
+                                             <img src="assets/img/carrito-de-compras.png" class="nav-link dropdown-toggle img-fluid" href="#"
+                                                 id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+                                             <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                                 <table id="lista-carrito" class="table">
+                                                     <thead>
+                                                         <tr>
+                                                             <th>Imagen</th>
+                                                             <th>Nombre</th>
+                                                             <th>Precio</th>
+                                                             <th>Cantidad</th>
+                                                             <th></th>
+                                                         </tr>
+                                                     </thead>
+                                                     <tbody></tbody>
+                                                 </table>
+                         
+                                                 <a href="#" id="vaciar-carrito" style="background-color: rgb(34, 34, 34); color: white;" class="btn btn-default btn-block">Vaciar Carrito</a>
+                                                 <a href="#" id="procesar-pedido" style="background-color: rgb(53, 3, 3); color: white;" class="btn btn-default btn-block">Procesar
+                                                     Compra</a>
+                                             </div>
+                                         </li>
+                         <li><a href="principal.html">Inicio</a></li>
+                         <li><a href="product.html">Productos</a>
+                         <li><a href="gestionEntrega.html">Pedido</a></li>
+                         <li><a href="editarPerfil.html">Mi Perfil</a></li>             
+                         <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>   
+                     </ul>
+                     <i class="fa fa-bars visible-xs btn-mobile"></i>
+                 </nav>
             </div>
         </div>
     </header>

@@ -18,6 +18,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/pedido.js"></script>
+    <script src="js/nombreUsuario.js">
+    </script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body onload="verProducto()">
     <div class="page-container">
@@ -28,6 +30,7 @@
             Licorera DBCR</a>
            </div>
             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;" >
+                <li><h3 style="color: white;" id="usrra"></h3></li>
                 <a id="100" hidden  href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                   Gestionar
@@ -41,29 +44,6 @@
                                    
                                    </div>
                                 </ul>
-               
-                                <li class="nav-item dropdown">
-                                    <img src="assets/img/carrito-de-compras.png" class="nav-link dropdown-toggle img-fluid" href="#"
-                                        id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
-                                    <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
-                                        <table id="lista-carrito" class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Imagen</th>
-                                                    <th>Nombre</th>
-                                                    <th>Precio</th>
-                                                    <th>Cantidad</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody></tbody>
-                                        </table>
-                
-                                        <a href="#" id="vaciar-carrito" style="background-color: rgb(34, 34, 34); color: white;" class="btn btn-default btn-block">Vaciar Carrito</a>
-                                        <a href="#" id="procesar-pedido" style="background-color: rgb(53, 3, 3); color: white;" class="btn btn-default btn-block">Procesar
-                                            Compra</a>
-                                    </div>
-                                </li>
                 <li><a href="principal.html">Inicio</a></li>
                 <li><a href="product.html">Productos</a>
                 <li><a href="gestionEntrega.html">Pedido</a></li>

@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var data = datas.val();
         $.each(data, function (node, value) {
           if (value.uid == uid) {
-          document.getElementById("cont3").innerHTML = "Bienvenido: " + value.nombre + ' ' + value.apellido;
+          document.getElementById("usrra").innerHTML = "Bienvenido: " + value.nombre + ' ' + value.apellido;
           }
         });
       });      

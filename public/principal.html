@@ -16,7 +16,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="verProducto()">
     <div class="page-container">
     	<nav class="full-reset nav-phonestore">
            <div class="logo tittles-pages">
@@ -26,6 +26,14 @@
            </div>
             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;">
                 <li> <div class="bienvenidoDBCR" id="cont3"></div></li>     
+                <li><a href="principal.html">Inicio</a></li>
+                <li><a href="product.html">Productos</a>
+                    <li><a href="editarPerfil.html">Mi perfil</a>
+                    <li><a href="gestionUsuarios.html">Gestion Usuarios</a></li>
+                    <li><a href="gestionProductos.html">Gestion Productos</a></li>
+                <li><a href="services.html">Pedido</a></li>
+                <li><a href="contact.html">Contactenos</a></li>               
+                <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>
                 <li>
                     <div >
                         <ul class="navbar-nav mr-auto">
@@ -55,13 +63,14 @@
                         </ul>
                     </div>
                 </li>          
+                
+                <li><a href="gestionUsuarios.html">Gestion Usuarios</a></li>
+                <li><a href="gestionProductos.html">Gestion Productos</a></li>
                 <li><a href="principal.html">Inicio</a></li>
-                <li><a href="product.html">Productos</a>
-                    <li><a href="editarPerfil.html">Mi perfil</a>
-                    <li><a href="gestionUsuarios.html">Gestion Usuarios</a></li>
-                    <li><a href="gestionProductos.html">Gestion Productos</a></li>
+                <!---<li><a href="product.html">Productos</a>--->
                 <li><a href="services.html">Pedido</a></li>
-                <li><a href="contact.html">Contactenos</a></li>               
+                <li><a href="contact.html">Contactenos</a></li>  
+                <li><a href="editarPerfil.html">Mi Perfil</a></li>             
                 <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>
             </ul>
             <i class="fa fa-bars visible-xs btn-mobile"></i>
@@ -118,54 +127,13 @@
                             <p class="tittles-pages">Novedades y Licores</p>
                             <br><br><br>
                         </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
-                            <div class="content-dest">
-                                <img src="assets/img/home-news.png" alt="news-icon" class="img-responsive center-box-content">
-                                <h3>Noticias</h3>
-                                <p>
-                                    Brindamos a los consumidores experiencias 
-                                    con los mejores estándares y bajo las tendencias de 
-                                    vanguardia que exige la categoría de Licores.    
-                                </p>
-                                <a href="#" class="btn btn-success">Más información</a>
-                                <hr class="visible-xs">
+                        <div class="row">
+                            <div id="imagen1">
                             </div>
+                        
                         </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
-                            <div class="content-dest">
-                                <img src="assets/img/home-promo.png" alt="promo-icon" class="img-responsive center-box-content">
-                                <h3>Promociones</h3>
-                                <p>
-                                    Anunciamos nuestras promociones en el portal principal, o a traves de nuestras redes sociales
-                                    Creamos promociones eventualmente, no te las pierdas!
-                                </p>
-                                <a href="#" class="btn btn-success">Más información</a>
-                                <hr class="visible-xs">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
-                            <div class="content-dest">
-                                <img src="assets/img/home-phones.png" alt="phone-icon" class="img-responsive center-box-content">
-                                <h3>Licores</h3>
-                                <p>Puedes ver nuestro amplio catalogo de licores.
-                                   Tenemos gran variedad desde importados hasta nacionales 
-                                </p>
-                                <a href="#" class="btn btn-success">Más información</a>
-                                <hr class="visible-xs">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
-                            <div class="content-dest">
-                                <img src="assets/img/home-plans.png" alt="plans-icon" class="img-responsive center-box-content">
-                                <h3>Servicios</h3>
-                                <p>
-                                Contamos con servicios puerta a puerta de nuestros productos.<br>
-                                Puedes contactarte con nosotros a traves de correo electronico, o a
-                                 traves de nnuestras redes sociales 
-                                </p>
-                                <a href="#" class="btn btn-success">Más información</a>
-                            </div>
-                        </div>
+                        <div class="row">
+                        </div>     
                     </div>
                 </div>
             </section> 
@@ -213,5 +181,6 @@
     <!-- llamado a cerrarSesion.js-->
     <script src="js/cerrarSesion.js"></script>
     <!-- Fin llamado a cerrarSesion.js-->
+    <script src="js/cargarProductos.js"></script>
 </body>
 </html>

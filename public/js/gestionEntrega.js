@@ -3,6 +3,7 @@ var id_cliente;// = '-MEwmkudxZnaCJM2MLFu';
 
 ///
 var referenciaUsuarios = db.ref("usuarios/");
+
 firebase.auth().onAuthStateChanged(function (user) {  
   if (user) {
     id_cliente = user.uid;    
@@ -23,6 +24,26 @@ reference.on('value', function (datos) {
                 document.getElementById('nombreCliente').innerText = data2.nombres + ' ' + data2.apellidos;
             });
         }
+
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        id_cliente = user.uid;
+    }
+    ///
+    var reference = db.ref('pedidosRG/');
+    reference.on('value', function (datos) {
+        var data = datos.val();
+        $.each(data, function (id_pedido, value) {
+            if (value.id_cliente == id_cliente) {
+                var sendData = table(id_pedido, value.total, value.fecha_pedido, value.fecha_entrega, value.estado);
+                printHTML('loadTable', sendData);
+                var reference2 = db.ref('usuarios/' + id_cliente);
+                reference2.on('value', function (datos2) {
+                    var data2 = datos2.val();
+                    document.getElementById('nombreCliente').innerText = data2.nombre + ' ' + data2.apellido;
+                });
+            }
+        });
     });
 });
 
@@ -58,7 +79,13 @@ function viewDataPedido(id_pedido, estado) {
                 var reference2 = db.ref('productosRG/' + value.id_producto);
                 reference2.on('value', function (datos2) {
                     var data2 = datos2.val();
+
                     _subtotal += value.subtotal;
+
+                    var subt = (parseFloat(data2.precio) * parseFloat(value.cantidad));
+                    var sendData = table2(data2.categoria, data2.nombre, data2.precio, value.cantidad, subt);
+                    printHTML('loadTable2', sendData);
+                    _subtotal += subt;
                     document.getElementById('labelSubtotal').innerText = _subtotal.toFixed(2);
                     document.getElementById('labelIva').innerText = (_subtotal * 0.12).toFixed(2);
                     document.getElementById('labelTotal').innerText = (_subtotal + (_subtotal * 0.12)).toFixed(2);
@@ -68,6 +95,7 @@ function viewDataPedido(id_pedido, estado) {
             }
         });
     });
+
     id_confirmarPedido = id_pedido;
     switch (estado) {
         case "Pendiente":

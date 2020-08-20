@@ -11,11 +11,11 @@ var referenciaProductos = db.ref("productos");
             <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
-                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
+                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
                    $ 
                    <span class="">${precio}
                    </span>
-                </h4> 
+                </h1> 
                 <p style="text-align: center;">
                 <input id="cantidad" type="number"  min="1" max="100" value="1" required />
                 </p> 
@@ -45,11 +45,11 @@ var referenciaProductos = db.ref("productos");
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
-                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
+                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
                    $ 
                    <span class="">${precio}
                    </span>
-                </h1>                        
+                </h4>                        
             </div>
           </div>
           </div> `   

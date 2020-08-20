@@ -60,7 +60,24 @@ function datosW(nombre, precio, imagen, id, categoria) {
           </div> `;
 
   }else if(categoria == 'Cerveza'){
-    
+    `<div class="col-xs-12 col-sm-6 col-md-3"  id ="cer>
+          <div class="thumbnail thumbnail-content-phones">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+             <div class="caption">
+                <h3 class=" text-center">${nombre}</h3>	                								        
+                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
+                   $ 
+                   <span class="">${precio}
+                   </span>
+                </h1>   
+                <input id="cantidad" type="number"  min="1" max="100" value="1" required />
+                <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
+            </div>
+          </div>
+          </div> `;
+
+        return  document.getElementById('cer').style.display='none';
+
 
   }
     

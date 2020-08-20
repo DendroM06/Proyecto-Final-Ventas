@@ -18,7 +18,7 @@
 </head>
 
 
-<body onload="verProducto()">
+<body onload="vertodosProductos()">
 	<div class="page-container">
 		<nav class="full-reset nav-phonestore" style="height: 80px">
 			<div class="logo tittles-pages">
@@ -36,8 +36,9 @@
 								<div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
 									<table id="lista-carrito" class="table">
 										<thead>
+											<tr><a>Imagen</a></tr>
 											<tr>
-												<th>Imagen</th>
+												<th><a>Imagen</a></th>
 												<th>Nombre</th>
 												<th>Precio</th>
 												<th>Cantidad</th>
@@ -126,16 +127,10 @@
 		    				<div class="container" id="lista-productos">
 			    				<ul class="nav nav-tabs" role="tablist" id="TabProducts">
 								  <li class="active"><a href="#all-categories" role="tab" data-toggle="tab"><i class="fa fa-th"></i>&nbsp; Todo</a></li>
-								  <li><a href="#smartphones" role="tab" data-toggle="tab"><i class="fa fa-mobile"></i>&nbsp; Whiskys</a></li>
-								  <li><a href="#tablets" role="tab" data-toggle="tab"><i class="fa fa-tablet"></i>&nbsp; Ron y Vodka</a></li>
+								  <li><a href="#whiskys" role="tab" data-toggle="tab"><i class="fa fa-th"></i>&nbsp; Whiskys</a></li>
+								  <li><a href="#ron" role="tab" data-toggle="tab"><i class="fa fa-tht"></i>&nbsp; Ron y Vodka</a></li>
 								  <li>
-							        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hdd-o"></i>&nbsp; Cervezas<span class="caret"></span></a>
-							        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-							          <li><a href="#android" tabindex="-1" role="tab" data-toggle="tab"><i class="fa fa-android"></i>&nbsp; Pilsener</a></li>
-							          <li><a href="#iOS" tabindex="-1" role="tab" data-toggle="tab"><i class="fa fa-apple"></i>&nbsp; Corona</a></li>
-							          <li><a href="#windowsPhone" tabindex="-1" role="tab" data-toggle="tab"><i class="fa fa-windows"></i>&nbsp; Varias</a></li>
-							        </ul>
-							      </li>
+							        <a href="#cerveza" role="tab" data-toggle="tab"><i class="fa fa-th"></i>&nbsp; Cervezas</a></li>
 								</ul>
 								<div class="tab-content" id= "img">
 								  <!-- ===================================== Todas las categorias ============================================= -->
@@ -149,77 +144,20 @@
 									<div class="row">										
 									</div>
 								</div>
-								  <!-- ===================================== Productos ============================================= -->
-								<div class="tab-pane" id="smartphones">
+								  <!-- ===================================== Whisky ============================================= -->
+								<div class="tab-pane" id="whiskys">
 								  	<p class="tittles-pages">Whiskys</p>
 								  	<div class="row">
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-smartphone.png" alt="SmartPhone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Whiskys</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-										<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-smartphone.png" alt="SmartPhone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">#1</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-smartphone.png" alt="SmartPhone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">SmartPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-smartphone.png" alt="SmartPhone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">SmartPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
+										<div id="twhisky">
+										</div>								  		
+										
 								  	</div>
-									<div class="row"><!-- Paginacion smartphone -->
-										<div class="col-xs-12 text-center">
-									 		<ul class="pagination">
-											  <li><a href="#">&laquo;</a></li>
-											  <li class="active"><a href="#">1</a></li>
-											  <li><a href="#">2</a></li>
-											  <li><a href="#">3</a></li>
-											  <li><a href="#">4</a></li>
-											  <li><a href="#">5</a></li>
-											  <li><a href="#">6</a></li>
-											  <li><a href="#">7</a></li>
-											  <li><a href="#">&raquo;</a></li>
-											</ul>
-										</div>
+									<div class="row">
+										
 									</div>
 								  </div>
 								  <!-- ===================================== Tablets ============================================= -->
-								  <div class="tab-pane" id="tablets">
+								  <div class="tab-pane" id="ron">
 								  	<p class="tittles-pages">Tablets</p>
 								  	<div class="row">
 								  		<div class="col-xs-12 col-sm-6 col-md-3">
@@ -287,213 +225,24 @@
 										</div>
 									</div>
 								  </div>
-								  <!-- ===================================== Android ============================================= -->
-								  <div class="tab-pane" id="android">
-								  	<p class="tittles-pages">Android</p>
+								  <!-- ===================================== Cervezas============================================= -->
+								  <div class="tab-pane" id="cerveza">
+								  	<p class="tittles-pages">Cervezas</p>
 								  	<div class="row">
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-android.png" alt="Android" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Android</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-android.png" alt="Android" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Android</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-android.png" alt="Android" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Android</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-android.png" alt="Android" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Android</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  	</div>
-								  	<div class="row"><!-- Paginacion android -->
-										<div class="col-xs-12 text-center">
-									 		<ul class="pagination">
-											  <li><a href="#">&laquo;</a></li>
-											  <li class="active"><a href="#">1</a></li>
-											  <li><a href="#">2</a></li>
-											  <li><a href="#">3</a></li>
-											  <li><a href="#">4</a></li>
-											  <li><a href="#">5</a></li>
-											  <li><a href="#">6</a></li>
-											  <li><a href="#">7</a></li>
-											  <li><a href="#">&raquo;</a></li>
-											</ul>
+										<div id="tcerveza">
 										</div>
+
+									</di>
+								  		
+								  		
+								  		
+								  	<div class="row">										
 									</div>
 								  </div>
-								  <!-- ===================================== iOS ============================================= -->
-								  <div class="tab-pane" id="iOS">
-								  	<h2 class="tittles-pages">iOS</h2>
-								  	<div class="row">
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-iOS.png" alt="iOS" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">iPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-iOS.png" alt="iOS" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">iPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-iOS.png" alt="iOS" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">iPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-iOS.png" alt="iOS" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">iPhone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  	</div>
-								  	<div class="row"><!-- Paginacion iOS -->
-										<div class="col-xs-12 text-center">
-									 		<ul class="pagination">
-											  <li><a href="#">&laquo;</a></li>
-											  <li class="active"><a href="#">1</a></li>
-											  <li><a href="#">2</a></li>
-											  <li><a href="#">3</a></li>
-											  <li><a href="#">4</a></li>
-											  <li><a href="#">5</a></li>
-											  <li><a href="#">6</a></li>
-											  <li><a href="#">7</a></li>
-											  <li><a href="#">&raquo;</a></li>
-											</ul>
-										</div>
-									</div>
-								  </div>
-								  <!-- ===================================== Windows Phone ============================================= -->
-								  <div class="tab-pane" id="windowsPhone">
-								  	<p class="tittles-pages">Windows Phone</p>
-								  	<div class="row">
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-windows.png" alt="Windows phone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Windows Phone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-										<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-windows.png" alt="Windows phone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Windows Phone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-windows.png" alt="Windows phone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Windows Phone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  		<div class="col-xs-12 col-sm-6 col-md-3">
-								  			<div class="thumbnail thumbnail-content-phones">
-										      <img src="assets/img/phone-windows.png" alt="Windows phone" class="img-responsive">
-										      <div class="caption">
-										        <h3 class=" text-center">Windows Phone</h3>
-										        <p class="text-justify">
-										        	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione ad consectetur facere, alias deserunt consequatur.
-										        </p>
-										        <p class="text-center"><a href="#" class="btn btn-danger" role="button">Ver más</a></p>
-										      </div>
-										    </div>
-								  		</div>
-								  	</div>
-								  	<div class="row"><!-- Paginacion Windows Phone -->
-										<div class="col-xs-12 text-center">
-									 		<ul class="pagination">
-											  <li><a href="#">&laquo;</a></li>
-											  <li class="active"><a href="#">1</a></li>
-											  <li><a href="#">2</a></li>
-											  <li><a href="#">3</a></li>
-											  <li><a href="#">4</a></li>
-											  <li><a href="#">5</a></li>
-											  <li><a href="#">6</a></li>
-											  <li><a href="#">7</a></li>
-											  <li><a href="#">&raquo;</a></li>
-											</ul>
-										</div>
-									</div>
-								  </div>
+								 
+								 
+								  
+								  
 								</div>
 		    				</div>
 		    			</div>	
@@ -552,7 +301,7 @@
 	<!-- Fin llamado a cerrarSesion.js-->
 	<script src="js/cargarProductos.js"></script>
 	<!--Carrito-->
-	<script src="js/carrito.js"></script>
-    <script src="js/pedido.js"></script>
+	<!--<script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>-->
 </body>
 </html>

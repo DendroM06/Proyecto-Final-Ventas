@@ -45,9 +45,9 @@ function verProducto() {
 }
 function datosW(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Whisky'){
-    return `<div class="col-xs-12 col-sm-6 col-md-3" >
-          <div class="thumbnail thumbnail-content-phones">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
+          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
                 <h4 class="card-title pricing-card-title text-center precio" text-align="center">
@@ -86,9 +86,9 @@ function verProductoW(){
 
 function datosC(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Cerveza'){
-    return `<div class="col-xs-12 col-sm-6 col-md-3" >
-          <div class="thumbnail thumbnail-content-phones">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
+          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
                 <h4 class="card-title pricing-card-title text-center precio" text-align="center">
@@ -128,9 +128,9 @@ function verProductoC(){
 
 function datosR(nombre, precio, imagen, id, categoria) {
   if (categoria == 'Ron' || categoria == 'Vodka'){
-    return `<div class="col-xs-12 col-sm-6 col-md-3" >
-          <div class="thumbnail thumbnail-content-phones">
-            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+    return `<div class="col-xs-12 col-sm-6 col-md-3" style="width:240px heigth:70px">
+          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:70px">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive" width="225" height="225">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
                 <h4 class="card-title pricing-card-title text-center precio" text-align="center">

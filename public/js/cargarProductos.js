@@ -4,6 +4,7 @@ function vertodosProductos(){
   verProducto();
   verProductoW();
   verProductoC();
+  verProductoR();
 }
 
 function innerHTML(id, result) {
@@ -12,15 +13,15 @@ function innerHTML(id, result) {
 function datos(nombre, precio, imagen, id) {
   //var i = i+1;
   return `<div class="col-xs-12 col-sm-6 col-md-3" >
-          <div class="thumbnail thumbnail-content-phones">
+          <div class="thumbnail thumbnail-content-phones" style="width:240px heigth:50px">
             <img src="${imagen}" alt="prod-icon" class="img-responsive">
              <div class="caption">
                 <h3 class=" text-center">${nombre}</h3>	                								        
-                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
+                <h4 class="card-title pricing-card-title text-center precio" text-align="center">
                    $ 
                    <span class="">${precio}
                    </span>
-                </h1>   
+                </h4>   
                 <input id="cantidad" type="number"  min="1" max="100" value="1" required />
                 <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
             </div>
@@ -64,7 +65,7 @@ function datosW(nombre, precio, imagen, id, categoria) {
     return`<a><a>`;
        
   }
-  else if(categoria == 'Ron' || categoria == 'Vodka'){
+  else{
     return`<a><a>`;
          
   }
@@ -125,3 +126,44 @@ function verProductoC(){
   });
 }
 
+function datosR(nombre, precio, imagen, id, categoria) {
+  if (categoria == 'Ron' || categoria == 'Vodka'){
+    return `<div class="col-xs-12 col-sm-6 col-md-3" >
+          <div class="thumbnail thumbnail-content-phones">
+            <img src="${imagen}" alt="prod-icon" class="img-responsive">
+             <div class="caption">
+                <h3 class=" text-center">${nombre}</h3>	                								        
+                <h1 class="card-title pricing-card-title text-center precio" text-align="center">
+                   $ 
+                   <span class="">${precio}
+                   </span>
+                </h1>   
+                <input id="cantidad" type="number"  min="1" max="100" value="1" required />
+                <a class="btn btn-primary agregar-carrito" data-id="${id}">Agregar</a>             
+            </div>
+          </div>
+          </div> `;
+
+  }else if(categoria == 'Cerveza'){
+    return`<a><a>`;
+       
+  }
+  else {
+    return`<a><a>`;
+         
+  }
+
+    
+}
+
+function verProductoR(){
+  var task  = db.ref("productos/");
+  task.on("child_added",function(data){
+      var taskValue = data.val();
+      taskValue.id = data.key;
+      
+      var productos = datosR(taskValue.nombre,taskValue.precio,taskValue.imagen,taskValue.id,taskValue.categoria);
+      innerHTML("tron",productos);
+     //console.log(productos);
+  });
+}

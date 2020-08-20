@@ -14,7 +14,7 @@ class Carrito {
     leerDatosProducto(producto) {
         const infoProducto = {
             imagen: producto.querySelector('img').src,
-            nombre: producto.querySelector('h3').textContent,
+            nombre: producto.querySelector('h4').textContent,
             precio: producto.querySelector('.precio span').textContent,
             cantidad: producto.querySelector('#cantidad').value,
             id: producto.querySelector('a').getAttribute('data-id')

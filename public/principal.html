@@ -7,14 +7,17 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/perfiles.js"></script>
 	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
 	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script src="js/modernizr.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
 </head>
 <body onload="verProducto()">
     <div class="page-container">
@@ -25,21 +28,45 @@
             Licorera DBCR</a>
            </div>
             <ul class="list-unstyled full-reset navigation-list" style="padding-top: 15px; padding-right: 15px;" >
-                <a href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
+                <a id="100" hidden  href="" class="btn btn-default dropdown-toggle" role="button" id="dropdownmenu1"
                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                   Gestionar
-                                  <span class="caret"></span>
+                                  <span id="101" hidden class="caret"></span>
                                   </a>
-                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu1">
-                                   <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
-                                   <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
-                                   <li><a href="gestionEntrega.html" class="dropdown-item">Ver Entregas</a></li>				
-                                  </ul>
+                                  <ul id="102"  class="dropdown-menu"  style=" margin-left: 750px; float: right; " role="menu" aria-labelledby="dropdownmenu1">
+                                   <div style="display: none;" id="103"">
+                                    <li><a href="gestionUsuarios.html" class="dropdown-item">Usuarios</a></li>
+                                    <li><a href="gestionProductos.html" class="dropdown-item">Productos</a></li>
+                                    <li><a href="resumenGestion.html" class="dropdown-item">Ver Entregas</a></li>				
+                                   
+                                   </div>
+                                </ul>
                
-               
+                                <li class="nav-item dropdown">
+                                    <img src="assets/img/carrito-de-compras.png" class="nav-link dropdown-toggle img-fluid" href="#"
+                                        id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+                                    <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                        <table id="lista-carrito" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                
+                                        <a href="#" id="vaciar-carrito" style="background-color: rgb(34, 34, 34); color: white;" class="btn btn-default btn-block">Vaciar Carrito</a>
+                                        <a href="#" id="procesar-pedido" style="background-color: rgb(53, 3, 3); color: white;" class="btn btn-default btn-block">Procesar
+                                            Compra</a>
+                                    </div>
+                                </li>
                 <li><a href="principal.html">Inicio</a></li>
                 <li><a href="product.html">Productos</a>
-                <li><a href="services.html">Pedido</a></li>
+                <li><a href="gestionEntrega.html">Pedido</a></li>
                 <li><a href="editarPerfil.html">Mi Perfil</a></li>             
                 <li><a id="cerrarSesion" href="login_registrarse.html">Cerrar Sesión</a></li>   
             </ul>

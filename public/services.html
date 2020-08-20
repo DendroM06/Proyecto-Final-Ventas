@@ -59,34 +59,110 @@
 
                         </div>
                         <div class="col-xs-12">
-                            <h2 class="text-center tittles-pages">¿ Como comprar con nosotros ? </h2>
-                            <div class="principal-container-services">
-                                <a href="#!">
-                                    <p class="icon-service"><i class="fa fa-briefcase"></i></p>
-                                    <p class="tittle-service">1)Productos</p>
-                                    <p class="description-service">
-                                    Tenemos un amplio catalogo de productos y licores, escoge tus favoritos y añadelos a tu carrito  </p>
-                                </a>
-                                <a href="#!">
-                                    <p class="icon-service"><i class="fa fa-envelope"></i></p>
-                                    <p class="tittle-service">2) Revisa tu carrito</p>
-                                    <br> <br><p class="description-service">
-                                       Una vez hayas creado tu lista ve a la pestaña Pedido y revisa si esta completa
-                                    </p>
-                                </a>
-                                <a href="#!">
-                                    <p class="icon-service"><i class="fa fa-wrench"></i></p>
-                                    <p class="tittle-service">3) Genera la orden de pago</p>
-                                    <p class="description-service">
-                                      Una vez aceptes y generes la orden de pago la compra esta lista para ser enviada a tu casa </p>
-                                </a>
-                                <a href="#!">
-                                    <p class="icon-service"><i class="fa fa-truck"></i></p>
-                                    <p class="tittle-service">4) Espera tu pedido</p>
-                                    <br><p class="description-service">
-                                         Listo! Nuestros repartidores estan de camino a tu direccion para entregarte tu compra ;)
-                                    </p>
-                                </a>
+                            <ul class="nav justify-content-end bg-dark">
+                                <li class="nav-item">
+                                    <h2 class="nav-link active white">Resumen de Gestión</h2>
+                                </li>
+                            </ul>
+                            <div class="container">
+                                <div>
+                                    <br>
+                                    <div>
+                                        <label>Fecha Inicio: 
+                                            <input type="datetime-local" id="fechaInicio">
+                                        </label>
+                                        <label style="margin-left: 20px;">Fecha Fin: 
+                                            <input type="datetime-local" id="fechaFin">
+                                        </label>
+                                        <input style="margin-left: 20px;" class="btn btn-success" type="button" value=" Filtrar " onclick="filtrarDatos()">
+                                        <input style="margin-left: 20px;" class="btn btn-success" type="button" value=" Todos " onclick="todosDatos()">
+                                        <input type="button" value="Regresar" class="btn btn-success" style="float: right;">
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <table class="table table-sm table-bordered text-center">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>Id Pedido</th>
+                                                        <th>Cliente</th>
+                                                        <th>Pedido</th>
+                                                        <th>Total</th>
+                                                        <th>Fecha de Pedido</th>
+                                                        <th>Fecha de Entrega</th>
+                                                        <th>Estado</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="loadTable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                             <!-- Modal -->
+                             <div class="modal fade" id="modalTask" tabindex="-1" role="dialog" aria-labelledby="modalTask" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalTask">Pedido</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-sm table-bordered text-center">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>Categoría</th>
+                                                        <th>Producto</th>
+                                                        <th>Costo</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Subtotal</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="loadTable2"></tbody>
+                                            </table>
+                                            <table id="tableTotales">
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <label id="subtotal">Subtotal:</label>
+                                                    </td>
+                                                    <td>
+                                                        <label id="labelSubtotal"></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <label id="iva">Iva 12%:</label>
+                                                    </td>
+                                                    <td>
+                                                        <label id="labelIva"></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <label id="total">Total:</label>
+                                                    </td>
+                                                    <td>
+                                                        <label id="labelTotal"></label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,7 +198,9 @@
     				<h4>DBCR &copy; 2020</h4>
     			</div>
     		</div>
-    	</footer>
+        </footer>
+        <script src="js/conexion.js"></script>
+        <script src="js/resumenGestion.js"></script>
     </div>
 </body>
 </html>

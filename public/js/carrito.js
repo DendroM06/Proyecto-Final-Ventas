@@ -51,7 +51,7 @@ class Carrito {
         <td>${producto.precio}</td>
         <td>${producto.cantidad}</td>
         <td>
-            <a class="btnBorrar btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
+            <a class="borrar-producto btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
         </td>`;
 
         listaProductos.appendChild(row);
@@ -63,12 +63,13 @@ class Carrito {
     eliminarProducto(e) {
         e.preventDefault();
         let producto, productoID;
-        if (e.target.classList.contains('btnBorrar')) {
+        if (e.target.classList.contains('borrar-producto')) {
             e.target.parentElement.parentElement.remove();
             producto = e.target.parentElement.parentElement;
             productoID = producto.querySelector('a').getAttribute('data-id');
         }
         this.eliminarProductoLS(productoID);
+        this.calcularTotal();
     }
 
     vaciarCarrito(e) {
@@ -123,7 +124,7 @@ class Carrito {
         <td>${producto.precio}</td>
         <td>${producto.cantidad}</td>
         <td>
-            <a class="btnBorrar btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
+            <a class="borrar-producto btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
         </td>`;
 
             listaProductos.appendChild(row);
@@ -148,7 +149,7 @@ class Carrito {
         </td>
         <td>${producto.precio * producto.cantidad}</td>
         <td>
-            <a class="btnBorrar btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
+            <a class="borrar-producto btn btn-danger" data-toggle="tooltip" title="Borrar" data-id="${producto.id}">${iconoBorrar}</a>
         </td>`;
 
             listaCompra.appendChild(row);
@@ -174,6 +175,24 @@ class Carrito {
             location.href = "compra.html";
         }
     }
+
+    calcularTotal(){
+        let productoLS;
+        let total = 0, subtotal = 0, igv = 0;
+        productoLS = this.ObtenerProductosLS();
+        for (let i = 0; i < productoLS.length; i++) {
+            let element = Number(productoLS[i].precio*productoLS[i].cantidad);
+            total = total + element;
+        }
+        igv = parseFloat(total * 0.12).toFixed(2);
+        subtotal = parseFloat(total-igv).toFixed(2);
+
+        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
+        document.getElementById('igv').innerHTML = "S/. " + igv;
+        document.getElementById('total').innerHTML = "S/. " + total.toFixed(2);
+
+    }
+
 }
 
 

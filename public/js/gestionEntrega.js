@@ -1,42 +1,41 @@
 var referenciaPUsuarios = db.ref("usuarios/");
 
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      var uid = user.uid;
-      referenciaPUsuarios.on("value", function (datos) {
-        var dato = datos.val();
-        $.each(dato, function (node, value) {
-          if (value.uid == uid) {
-            var id_cliente = node;
-            console.log(id_cliente);
-            var reference = db.ref("pedidosRG/");
-            reference.on("value", function (datos) {
-              var data = datos.val();
-              $.each(data, function (id_pedido, value) {
-                if (value.id_cliente == id_cliente) {
-                  var sendData = table(
-                    id_pedido,
-                    value.total,
-                    value.fecha_pedido,
-                    value.fecha_entrega,
-                    value.estado
-                  );
-                  printHTML("loadTable", sendData);
-                  var reference2 = db.ref("clientesRG/" + id_cliente);
-                  reference2.on("value", function (datos2) {
-                    var data2 = datos2.val();
-                    document.getElementById("nombreCliente").innerText =
-                      data2.nombres + " " + data2.apellidos;
-                  });
-                }
-              });
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    var uid = user.uid;
+    referenciaPUsuarios.on("value", function (datos) {
+      var dato = datos.val();
+      $.each(dato, function (node, value) {
+        if (value.uid == uid) {
+          var id_cliente = node;
+          console.log(id_cliente);
+          var reference = db.ref("pedidosRG/");
+          reference.on("value", function (datos) {
+            var data = datos.val();
+            $.each(data, function (id_pedido, value) {
+              if (value.id_cliente == id_cliente) {
+                var sendData = table(
+                  id_pedido,
+                  value.total,
+                  value.fecha_pedido,
+                  value.fecha_entrega,
+                  value.estado
+                );
+                printHTML("loadTable", sendData);
+                var reference2 = db.ref("clientesRG/" + id_cliente);
+                reference2.on("value", function (datos2) {
+                  var data2 = datos2.val();
+                  document.getElementById("nombreCliente").innerText =
+                    data2.nombres + " " + data2.apellidos;
+                });
+              }
             });
-          }
-        });
+          });
+        }
       });
-    }
-  });
-
+    });
+  }
+});
 
 function printHTML(request, response) {
   return (document.getElementById(request).innerHTML += response);

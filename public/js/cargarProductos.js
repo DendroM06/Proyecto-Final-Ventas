@@ -56,15 +56,6 @@ function datosWh(nombre, precio, imagen, id, categoria) {
 }
 
 
-<<<<<<< HEAD
-=======
-        //return document.getElementById('cer').style.display='none';
-    
-   
-  }
-    
-    
-}
 function verProductoW(){
   var task  = db.ref("productos/");
   task.on("child_added",function(data){
@@ -74,7 +65,5 @@ function verProductoW(){
       var productos = datosW(taskValue.nombre,taskValue.precio,taskValue.imagen,taskValue.id,taskValue.categoria);
       innerHTML("twhisky",productos);
      //console.log(productos);
-    
-    
->>>>>>> bf8d0b9a5c110ead4d6276b33d6ebfca1996a3b5
-
+  });
+}
